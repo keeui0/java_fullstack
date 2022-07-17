@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join_from.html</title>
+    <style>
+        table, tr, th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h3>회원 가입 양식</h3>
+
+    <form name="fo" method="get"></form>
+    <table>
+        <tr><th>- 아이디</th><th><input type="text" size="20" value=""></th></tr>
+        <tr><th>- 비밀번호</th><th><input type="password" size="20" value=""></th></tr>
+        <tr><th>- 비밀번호 확인</th><th><input type="password" size="20" value=""></th></tr>
+        <tr><th>- 이름</th><th><input type="text" size="20" value=""></th></tr>
+        <tr><th>- 성별</th><th><input type="radio" name="여성" value="1">여성
+                               <input type="radio" name="남성" value="2">남성</th></tr>
+        <tr><th>- 전화번호</th>
+                            <td>
+                                <select type="text" name="tel" list="sellphones" size="1" class="select"> 
+                                <datalist id="sellphones">
+                                    <option value="">02</option>
+                                    <option value="1">031</option>
+                                    <option value="2">032</option>
+                                    <option value="3">042</option>
+                                </datalist> 
+                                </select> -
+                                <input type="text" size="15" value=""> - 
+                                <input type="text" size="15" value="">                             
+                            </td></tr>
+        <tr><th>- 이메일</th><th><input type="email" size="15" value=""> @ 
+                                <select type="text" name="email" list="e-amil" size="1" class="select">
+                                    <datalist>
+                                        <option value="">선택</option>
+                                        <option value="10">naver.com</option>
+                                        <option value="11">nate.com</option>
+                                        <option value="12">gmail.com</option>
+                                    </datalist>
+                                </select>                                
+        </th></tr>
+        <tr><th>- 자기소개</th><th><textarea name="" id="" cols="60" rows="7"></textarea>
+        </th></tr>
+    </table>
+</body>
+</html>
+
