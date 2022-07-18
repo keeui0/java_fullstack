@@ -1,0 +1,26 @@
+h1{
+    font-family: Arial;
+    font-size: 60px;
+    text-shadow: 3px 3px gray;
+    text-align: center;
+    color: purple;
+}
+
+p.a{
+    color: green;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+p.b{
+    font-size: 20px;
+    font-style: italic;
+}
+
+p.c{
+    color: #444444;
+    font-family: "돋움",Dotum;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 150%;
+}

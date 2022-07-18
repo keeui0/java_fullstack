@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 합치기 및 오버라이딩</title>
+    <link rel="stylesheet" href="external.css">
+    <style>
+        p{ color: blue; font-size: 12px;}
+    </style>
+</head>
+<body>
+    <h3>p 태그에 중첩된 스타일</h3>
+    <!-- p태그가 아니라 style을 안 먹음 -->
+    <hr>
+    <p>Hello, students!</p>  
+    <!-- 위의(10) p태그 스타일 먹음 -->
+    <p style="font-size:25px">안녕하세요 교수님!</p>
+    <!-- 우선순위1 -->
+    <!-- 위의 p태그와 지금 추가된 스타일이 중첩됨 -->   
+</body>
+</html>
+
+<!-- 셀렉터(selector)
+    HTML 태그의 모양을 꾸밀 스타일 시트를 선택하는 기능
+태그 이름 셀렉터
+태그 이름이 셀렉터로 사용되는 유형
+셀렉터와 같은 이름의 모든 태그에 CSS3 스타일 시트 적용
+h3, li { color : brown; } -->
