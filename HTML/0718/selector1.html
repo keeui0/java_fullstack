@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 셀렉터</title>
+    <style>
+        /* 스타일 셀렉터
+        스타일이 적용되는 위치를 구분하는 방법
+        아래와 같이 h3, li 라고 돼있으면
+        h3태그와 li 태그에 스타일이 적용되어 글자의 색이 brown이 된다. */
+        h3, li{ color: brown;}
+    </style>
+</head>
+<body>
+    <h3>Web Programming</h3><hr>
+    <div>
+        <div>2학기 <strong>학습 내용</strong></div>
+        <ul>
+            <li>HTML 5</li>
+            <li><strong>CSS</strong></li>
+            <li>JAVASCRIPT</li>
+        </ul>
+        <div>60점 이하는 F!</div>
+    </div>
+</body>
+</html>
+<!-- 
+type="text/css"는 스타일의 유형이 텍스트이고 파일은 css라는 뜻이다.
+    후손(하위) 선택자.. 아들 딸 손자들
+    후선(하위) 선택자 (Descendant Selector)는 특정 태그의 후손 태그를 선택한다.
+ul strong
+    { 자손 후손 하위 셀렉터
+    형식 선택자 선택자 {속성:값;}
+        자식 선택자 .. 직계 .. 아들 딸
+        형식 선택자 > 선택자 {속성:값;} 부모 > 자식
+    
+        형제 선택자(sibling selector)
+        형식 선택자 ~ 선택자 {속성:값;} 형제 1 ~ 형제 4{속성:값;}
+                                      형제 1 + 형제 2{속성:값;} 인접형제 선택자
+    }
+
+2개 이상의 셀렉터 조합
+    조합에 적합한 HTML 태그에만 적용
+조합 선택자 는 기본 선택자 2개 이상을 한 번에 사용하는 선택자이다.
+    그룹, 자식, 자손(하위), 인접 형제 선택자가 있다.
+ -->
