@@ -6,20 +6,20 @@ h1{
     color: purple;
 }
 
-p.a{
+h2{
     color: green;
     font-size: 30px;
     text-decoration: underline;
 }
 
-p.b{
+h3{
     font-size: 20px;
     font-style: italic;
 }
 
-p.c{
+p.a{
     color: #444444;
-    font-family: "돋움",Dotum;
+    font-family: "돋움", Dotum;
     font-style: italic;
     font-size: 14px;
     line-height: 150%;
