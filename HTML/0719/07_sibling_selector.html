@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 선택자</title>
+    <style>
+        /* 인접형제선택자 : h1 뒤에 있는 h2 요소만 선택 가능 */
+        h1+h2 {color: red;}
+        h1+h6 {color: green;} /* 얘는 h1과 인접해 있지 않기 때문에 적용 안됨 */
+        /* 일반형제선택자 : h1 뒤에 있는 모든 요소 (h2, h3, h4, h5, h6) 선택 가능 */
+        h1~h2 {background-color: yellow;}
+        h1~h3:hover {color: blue;}
+        h1~h4 {background-color: black; color: white;}
+
+    </style>
+</head>
+<body>
+    <h1>Hava a nice day</h1>
+    <h2>Hava a nice day</h2>
+    <h3>Hava a nice day</h3>
+    <h4>Hava a nice day</h4>
+    <h5>Hava a nice day</h5>
+    <h6>Hava a nice day</h6>
+    
+    
+</body>
+</html>
