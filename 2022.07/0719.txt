@@ -1,0 +1,8 @@
+error
+
+divbox
+
+wight
+height
+
+단위 px 지정을 하지않아 에러

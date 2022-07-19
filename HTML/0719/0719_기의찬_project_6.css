@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    color: #423022;
+    font-family: "맑은 고딕";
+}
+
+body.main {
+    color: #423022;
+    font-family: "맑은 고딕";
+    line-height: 130%;
+}
+
+#headline {
+    color: #8f7e6c;
+    font-family: "돋움";
+    line-height: 130%;
+    font-weight: bold;
+}
+
+span.orange {
+    color: #ff6400;
+}
+
+#company {
+    color: #307466;
+    font-size: 18px;
+    text-decoration: underline;
+}
