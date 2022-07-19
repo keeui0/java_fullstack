@@ -23,13 +23,13 @@
         /* a 태그의 title 속성 값이 "us" 이거나 "us"로 시작하는 요소 선택 */
         /* 단, "us" 위에 연결되는 단어는 하이폰(-) 이어야 함 */
         a[title |="us"] {
-            background: url("us.png") no-repeat left center;
+            background: url("C:/Users/hi-guro/Desktop/keeui/java_fullstack/media/us.png") no-repeat left center;
             padding: 5px 25px;
         }
         /* a 태그의 title 속성 값이 "us" 이거나 "jap"로 시작하는 요소 선택 */
         /* 단, "jap" 뒤에 연결되는 단어는 하이폰(-) 이어야 함 */
         a[title |="jap"] {
-            background: url("jp.png") no-repeat left center;
+            background: url("C:/Users/hi-guro/Desktop/keeui/java_fullstack/media/jp.png") no-repeat left center;
             padding: 5px 25px;
         }
     </style>
@@ -40,8 +40,24 @@
         <li><a href="#" title="us">영어</a></li>
         <li><a href="#" title="us-english">영어</a></li>
         <!-- <li><a href="#" title="japanese">일본어</a><li> -->
-        <li><a href="#" title="japanese">일본어</a></li>
+        <li><a href="#" title="jap">일본어</a></li>
     </ul>
     
 </body>
 </html>
+<!-- 박스의 배치 
+normal flow
+    웹 페이지에 나타난 순서대로 HTML 태그 배치
+    position 프로퍼티를 이용하여 normal flow 무시 가능
+    
+position 프로퍼티를 이용한 배치 방법
+    정적 배치 - position : static (디폴트)
+    상대 배치 - position : relative
+    절대 배치 - position : absolute
+    고정 배치 - position : fixed
+    유동 배치 - float : left 혹은 fload : right
+
+position 프로퍼티를 사용할 때, 태그의 위치와 크기
+top, bottom, left, right, width, height 프로퍼티로 지정
+이들 프로퍼티는 배치 방법에 따라 다르게 사용됨
+-->
