@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #eeeeee;
+    font-family: "돋움";
+    font-size: 12px;
+    color: #666666;
+}
+li {
+    list-style-type: none;
+}
+.clear {
+    clear: both;
+}
+
+#header {
+    height: 40px;
+    width: 800px;
+    background-color: #dddddd;
+}
+#logo {
+    color: #3e2b23;
+    padding-top: 10px;
+    padding-left: 30px;
+    font-size: 16px;
+    display: inline-block;
+}
+#top_menu {
+    display: block;
+    float: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+#left {
+    position: absolute;
+    width: 150px;
+    height: 600px;
+    background-color: #343333;
+    color: #e2e2e2;
+}
+#right {
+    position: absolute;
+    margin-left: 150px;
+    height: 600px;
+    width: 650px;
+    background-color: #252525;
+}
+#main_title {
+    position: absolute;
+    width: 572px;
+    padding: 10px;
+    border: solid 5px #444444;
+    margin-top: 24px;
+    margin-right: 24px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-left: 24px;
+}
+#thumnail {
+    position: relative;
+    padding-top: 30px;
+    padding-left: 70px;
+    width: 150px;
+    height: 150px;
+}
+#move_left {
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-left: 40px;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+#move_right {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    float: right;
+}
+
+
+#main_img {
+    position: relative;
+    padding-top: 15px;
+    padding-left: 24px;
+    width: 600px;
+    height: 350px;
+    margin-top: 80px;
+}
+
+.submenu {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+}
+h2 {
+    font-weight: normal;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+#photos img{
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 10px;
+    max-width: 90px;
+    max-height: 100px;
+}
+
+#photos a {
+
+    margin-left: 10px;
+    margin-top: 3px;
+
+}
+
+#photos {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    margin:30px 10px;
+}

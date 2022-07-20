@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 스타일 주기</title>
+    <style>
+        input[type=text] {            /* text 창에만 적용 */
+            background: brown;
+        }
+        input:hover, textarea:hover {            /* 마우스 올라 올 때 */
+            background-color: aliceblue;
+        }
+        input[type=text]:focus, input[type=email]:focus {            /* 포커스 받을 때 */
+            font-size: 120%;
+        }
+        label {
+            display: block;            /* 새 라인에서 시작 */
+            padding : 10px;
+        }
+        label span {
+            float: left;
+            width: 90px;        
+            text-align: right;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>CONTACT us</h3><hr>
+    <form>
+        <label>
+            <span>name</span><input type="text" placeholder="현택이"><br>
+        </label>
+        <label>
+            <span>email</span>
+            <input type="text" placeholder="citadell@naver.com"><br>
+        </label>
+        <label>
+            <span>Comment</span><textarea placeholder="메세지를 남겨주세요."></textarea><br>
+        </label>
+        <label>
+            <span></span><input type="submit" value="숙제제출"><br>
+        </label>
+    </form>
+    
+</body>
+</html>
+<!-- CSS Style 동적 변화 - animation
+    (1) animation 속성을 사용하여 요소의 현재 스타일을
+        다른 스타일로 천천히 변화 시킬 수 있음
+    (2) CSS2에선 자바 스크립트가 필요 했지만 CSS3에선 자바 스크립트 없이
+        이런 효과 적용이 가능
+    (3) 애니메이션 효과를 사용하기 위해서 우선 애니메이션에 대한
+        키 프레임(keyframe)을 정의해야 함
+    (4) 키 프레임(keyframe)에는 특정한 시간에 해당 요소가 가져야 할 CSS 스타일을 명시
+    (5) 애니메이션 효과가 동작하기 위해서는 먼저 animation-name 속성을 이용하여
+        요소와 키 프레임을 연결
+    (6) from 키워드에는 처음 시작점 스타일을 명시하고,
+        to 키워드에는 마지막 종료점 스타일을 명시
+    (7) 좀 더 복잡한 애니메이션 효과를 나타내기 위해서는 퍼센터(%)를 사용
+    (8) 0%에는 처음 스타일, 100%에는 마지막 스타일을 명시하고,
+        중간에 원하는 수만큼의 키 프레임을 생성
+ -->
