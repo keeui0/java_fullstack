@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num; //변숫 값이 없다.
+        var obj = null; // 객체 변숫 값이 없다.
+        //typeof를 통해 데이터 타입을 알 수 있다.
+        document.write(typeof 100+"<br>"); //number 정수
+        document.write(typeof 10.5+"<br>"); //number 실수
+        document.write(typeof "홍길동"+"<br>"); //string 문자, 문자열
+        document.write(typeof true+"<br>"); //boolean 참, 거짓 (자료형)
+        document.write(typeof [1,2,3]+"<br>");  //object 배열
+
+        //object : 데이터 속성과 값으로 이루어짐 {이름, 값}
+        document.write(typeof {name:'홍길동', age:25} + "<br>"); //object
+        document.write(typeof num + "<br>"); //undefined 정해지지 않음.
+        document.write(typeof obj + "<br>"); //obj 최상위 객체
+
+    </script>
+    
+</body>
+</html>
+<!-- null 값이 정해지지 않은 상태 -->

@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <title>carousel</title>
+    <link href="mine.css" type="text/css" rel="stylesheet" />
+    <style></style>
+  </head>
+  <body id="background">
+    <div class="box1">
+      <img
+        id="boximg"
+        src="Carousel_Boilerplate/Carousel_Boilerplate/images/image-1.png"
+        style="width: 800px; height: 500px"
+      />
+    </div>
+
+    <div class="arrows">
+      <div class="arrowleft">
+        <button
+          type="button"
+          class="btm_image"
+          id="img_btn"
+          style="height: 60px; width: 60px; border-radius: 100px"
+          value="<"
+          onclick="clickleft()"
+        ></button>
+
+        <div class="arrowright">
+          <button
+            type="button"
+            class="btm_image2"
+            id="img_btn"
+            style="height: 60px; width: 60px; border-radius: 100px"
+            value=">"
+            onclick="clickright()"
+          ></button>
+          <div class="dots">
+            <input
+              type="button"
+              style="
+                background-color: #808080;
+                border: 0;
+                outline: 0;
+                height: 10px;
+                width: 10px;
+                font-size: 35px;
+                color: white;
+                border-radius: 1000px;
+                margin: 10px;
+              "
+              name="dot1"
+              onclick="clickdot(1)"
+            />
+            <input
+              type="button"
+              style="
+                background-color: #808080;
+                border: 0;
+                outline: 0;
+                height: 10px;
+                width: 10px;
+                font-size: 35px;
+                color: white;
+                border-radius: 1000px;
+                margin: 10px;
+              "
+              name="dot2"
+              onclick="clickdot(2)"
+            />
+            <input
+              type="button"
+              style="
+                background-color: #808080;
+                border: 0;
+                outline: 0;
+                height: 10px;
+                width: 10px;
+                font-size: 35px;
+                color: white;
+                border-radius: 1000px;
+                margin: 10px;
+              "
+              name="dot3"
+              onclick="clickdot(3)"
+            />
+            <input
+              type="button"
+              style="
+                background-color: #808080;
+                border: 0;
+                outline: 0;
+                height: 10px;
+                width: 10px;
+                font-size: 35px;
+                color: white;
+                border-radius: 1000px;
+                margin: 10px;
+              "
+              name="dot4"
+              onclick="clickdot(4)"
+            />
+            <input
+              type="button"
+              style="
+                background-color: #808080;
+                border: 0;
+                outline: 0;
+                height: 10px;
+                width: 10px;
+                font-size: 35px;
+                color: white;
+                border-radius: 1000px;
+                margin: 10px;
+              "
+              name="dot5"
+              onclick="clickdot(5)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var i = 1;
+      var getimgno = document.getElementById("boximg");
+      function clickright() {
+        if (i < 6) {
+          getimgno.setAttribute(
+            "src",
+            "Carousel_Boilerplate/Carousel_Boilerplate/images/image-" +
+              i +
+              ".png"
+          );
+          i++;
+          console.log(i);
+        } else if ((i = 5)) {
+          i = 1;
+          console.log(i);
+        }
+      }
+      function clickleft() {
+        if (i > 0) {
+          getimgno.setAttribute(
+            "src",
+            "Carousel_Boilerplate/Carousel_Boilerplate/images/image-" +
+              i +
+              ".png"
+          );
+          i--;
+          console.log(i);
+        } else if ((i = 1)) {
+          i = 5;
+          console.log(i);
+        }
+      }
+      function clickdot(n) {
+        getimgno.setAttribute(
+          "src",
+          "Carousel_Boilerplate/Carousel_Boilerplate/images/image-" + n + ".png"
+        );
+      }
+    </script>
+  </body>
+</html>

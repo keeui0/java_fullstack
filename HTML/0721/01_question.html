@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 응용</title>
+    <style>
+        /* @keyframes 어노테이션 사용 */
+        @keyframes imagerotation {
+            /* animation-name : imagerotation; -> name 은 @keyframes imagerotation
+                에서 사용된 이름을 써야 애니메이션 동작이 적용됨*/
+
+            /* translate으로 초기 위치 지정(x축으로 300px)
+            나중 위치는 x 축으로 0px */
+            0% { transform: translate(300px);}
+            100% { transform: translate(0px);}
+        }
+        /* p태그에 애니메이션 입력 */
+        p {
+            animation-name: imagerotation;
+            animation-duration: 2s;
+            animation-iteration-count : infinite;
+        }
+    </style>
+</head>
+<body>
+    <h3>질문있습니다.</h3><hr>
+    <!-- alt : 이미지 경로가 잘못됐을 때 이미지를 대처하는 포현 -->
+    <p><img src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\question.png" alt="image" 
+        width="15px" height="15px">질문 있습니다.</p>
+    
+</body>
+</html> 
+<!-- <자바 스크립트 작성법>
+대소문자 구분하여 작성
+문장은 세미콜론(;)으로 구분한다.
+큰따옴표{""}와 작은따옴표('')를 구분하여 사용
+자바스크립트는 웹 문서를 동적으로 제어하기 위해 고안된 프로그래밍 언어
+<웹 삼총사>
+    HTML : 모델 담당 Model
+    CSS : 뷰 담당 View
+    JavaScript : 제어 담당 Control
+
+자바스크립트 코드 작성이 가능한 위치
+    1. HTML 태그의 이벤트 리스너 속성에 작성
+    2. <script></script> 태그에 작성
+    3. 자바 스크립트 파일에 작성    .js
+    4. URL 부분에 작성
+
+1) 자바 스크립트 <script> 태그 안에 사용
+    (1) HTML에서 하기 어려운 조건문 반복문 등 논리 로직을 지원하며,
+        함수나 객체의 사용도 가능하게 함
+    (2) 웹 페이지의 콘텐츠를 동적으로 동작 시킬 수 있음
+    (3) 순차 지향이며, 객체의 개념이 들어가서 객체 지향형과 함수형 프로그래밍 모두 가능
+    (4) 각 변수의 타입을 명시할 필요가 없는 인터프리터 언어로 모두 변수 타입을
+        var로 표현 (파이썬과 비슷)
+    (5) 우리가 아는 c언어, 자바, 파이썬 등의 프로그래밍 언어와 비슷한 느낌의 문법
+    (6) 대소문자 구분 js와 JS는 서로 다른 변수로 인식
+    (7) 각 문장은 세미콜론(;)으로 구분 var x = 1; var y = 1;
+    (8) 큰따옴표("")와 작은따옴표('')를 구분
+    <img src="puppy.png" alt="이미지" onmouseover="this.src='apple.png'">
+    (9) 상수(Literal)는 직접 표현되는 값 그 자체를 의미
+        숫자 상수(1, 2, 3, ...) 문자열 상수("자바script")
+
+< 자바 스크립트의 역할>
+    요소의 추가 및 삭제
+    CSS 및 HTML 요소의 스타일 변경
+    사용자와의 상호작용
+    폼의 유효성 검증
+    마우스와 키보드 이벤트에 대한 스크립트 실행
+    웹 브라우저 제어 및 쿠키 등의 설정과 조회
+    AJAX 기술을 이용한 웹 서버와의 통신
+-->

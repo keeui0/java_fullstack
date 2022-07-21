@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 예제</title>
+    <!-- 자바스크립트(javascript)
+    자바 스크립트는 <script> 태그 안에 사용
+    HTML에서 하기 어려운 조건문 반복문 등 논리로직을 지원하며
+    함수나 객체의 사용도 가능하게 함
+    객체지향 언어 같지만 순차지향이며 객체의 개념이 들어간 것
+    본 예제를 실행하면 스크립트의 순서대로 코드가 실행됨(순차지향) 
+    -->
+    <script>
+        // 자바스크립트에서 모든 변수형은 var이며
+        // 제대로 사용하기 위해서는 parsing이 필요함
+        var num = 0;
+        // document.write : 자바스크립트 출력문
+        document.write ("head 태그 내 실행 순서 : " + num + "<br/>");
+    </script>
+    <script>
+        var num = 1;
+        document.write("head 태그 내 실행 순서 : " + num + "<br/>");
+    </script>
+</head>
+<body>
+    <script>
+        var num = 2;
+        document.write("body 태그 내 실행 순서 : " + num + "<br/>");
+    </script>
+    <script>
+        var num = 3;
+        document.write("body 태그 내 실행 순서 : " + num + "<br/>");
+    </script> 
+    
+</body>
+</html> 
+<!-- 
+    1. HTML 태그의 onclick 이벤트 리스너에 자바 스크립트 코드 작성
+    <img src="apple.png" alt="img" onclick="this.src='banana.png'"> 
+
+-->

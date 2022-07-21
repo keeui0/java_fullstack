@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 리스너 속성에 자바스크립트 코드</title>
+</head>
+<body>
+    <h3>마우스 올려 보세요.</h3>
+    <!-- 마우스 이벤트, 마우스가 이미지에 이동하면 이벤트 실행
+    초기 이미지 지정 -->
+    <img src="C:\\Users\hi-guro\Desktop\keeui\java_fullstack\media\mio.png" alt="이미지"
+        onmouseover="this.src='C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\apple.png'"
+        onmouseout="this.src='C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\banana.png'">
+    <!-- 이미지에 마우스가 올라가면 (onmouseover)지정된 이미지로 바뀜 -->
+    <!-- 마우스가 이미지를 벗어나면 다시 이미지가 바뀜(onmouseout) -->
+    
+</body>
+</html>
+<!-- 
+    this 는 현재 img태그를 가리키는 자바스크립트 키워드이다.
+<script></script> 태그에 자바스크립트 작성
+특징
+    <head></head>나 <body></body> 내 어디든 가능
+    웹 페이지 내에 여러번 삽입 가능
+ -->

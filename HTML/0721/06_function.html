@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function over(obj) {
+            obj.src = "C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\dog.gif";
+        }
+        function out(obj) {
+            obj.src = "C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\apple.png";
+        }
+    </script>
+</head>
+<body>
+    <h3>마우스 올려 보세요.</h3>
+    <img src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\banana.png" alt="이미지"
+        onmouseover="over(this)"
+        onmouseout="out(this)"    
+    >
+    
+</body>
+</html>
+<!-- 자바스크립트 변수
+    (1) 자바스크립트 데이터 저장 공간
+    (2) 변수 선언 : 변수 이름을 정하고, 저장 공간 활당하며,
+    var 키워드를 사용할 수도 있고 빼고 할 수도 있다.
+    
+    (3) 자바 스크립트에는 변수 타입 없기 때문에 변수 타입 선언하지 않음
+        var score; // 정상적인 변수 선언
+        int score; //  오류, 변수 타입 int 없음
+
+    (4) 변수에 타입이 없기 때문에 저장되는 값에 대한 제약 없음
+        score = 66.8; //    실수도 저장 가능
+        score = "high"; //  문자열로 저장 가능
+
+    (5) 지역 변수
+    함수 내에 var 키워드로 선언되어 함수 내에서만 사용된다.
+
+        var x; //   전역 변수 x
+        function f() {
+            var y; //   지역 변수 y 선언
+            x = 10; //  전역 변수 x에 10 저장
+            y = 10; // 지역 변수 y에 10 저장
+            z = 10; // 새로운 지역 변수 z 선언 및 10 저장   
+
+    (6) this로 전역변수 접근
+
+    지역 변수와 전역 변수의 이름이 같을 때
+    전역 변수에 접근하고자 할 때 : this.전역변수
+    var x; // 전역 변수
+    function f() {
+        var x; // 지역 변수
+        x = 1; // 지역 변수 x에 1 저장
+        this.x = 100; // 전역 변수 x에 100 저장
+    }
+        }
+-->
