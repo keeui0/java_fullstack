@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대입 연산</title>
+</head>
+<body>
+    <h3>대입 연산</h3>
+    <script>
+        var x = 3, y = 3, z = 3;
+        document.write("x=" + x + "y=" + y);
+        document.write(", z=" + z + "<br><br>");
+
+        x += 3; // x = x + 3 -> x = 6
+        y *= 3; // y = y * 3 -> y = 9
+        z %= 2; // z = z * 2 -> z = 2
+
+        document.write("x += 3; 실행 후, x=" + x + "<br>");
+        document.write("y *= 3; 실행 후, y=" + x + "<br>");
+        document.write("z %= 2; 실행 후, z=" + x + "<br>");
+
+        var x = 13, y = 7;
+        document.write("x=" + x + ", y=" + y + "<br><br>");
+        document.write("x == y : " + (x == y) + "<br>");
+        document.write("x != y : " + (x != y) + "<br>");
+
+        var x = true, y = false;
+        document.write("x=" + x + ", y=" + y + "<br><br>");
+        document.write("x && y : " + (x&&y) + "<br>");
+        document.write("x || y : " + (x||y) + "<br>");
+        document.write("!x : " + (!x) + "<br>" );
+        document.write("<hr>");
+        document.write("(3>2) && " + ((3>2)&&(3<4)) + "<br>");
+        document.write("(3==2) || (-1<0) : " + ((3==2)||(-1<0)));
+
+    </script>
+    
+</body>
+</html>
+<!-- 
+    비교 연산 : 두 값 비교, true나 false의 결과를 내는 연산
+    논리 연산 : AND, OR, NOT
+    a && b 논리AND연산 a, b 모두 true일 때 true를 리턴한다.
+    a || b 논리OR연산 a, b 중 하나라도 true 이면 true를 리턴한다
+    !a     논리NOT연산 a true이면 false값을 준다.
+
+    조건 연산(삼항연산)
+    condition ? expT : expF
+        condition이 true이면 전체 결과는 expT의 계산 값
+                    false이면 expF의 계산 값
+
+    증감 연산자 : ++, --
+    a++(후위연산자) a= a + 1
+    a--(후위연산자) a= a - 1
+ -->

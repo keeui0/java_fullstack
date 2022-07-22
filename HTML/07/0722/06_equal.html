@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대입 연산</title>
+</head>
+<body>
+    <script>
+        //이 부분은 전항 후항 연산자 이다.
+        var num1 = 35;
+        // ++이 뒤에 오는 경우 해당 라인에서는 가산이 되지 않고
+        // 다음 줄에서 된다.(선 출력(num) 후 연산(++))
+        var num2 = num1++;
+        //++이 먼저 오는 경우 최 우선으로 연산이 진행된다.
+        // 선 연산(++) 후 출력 (num) 이렇게 외우면 편하다.
+        // 각종 자격시험 단골 메뉴기 때문에 꼭 외워두는 것이 좋다.
+        var num3 = ++num1;
+
+        document.write("num1 = " + num1 + "<br>"); //num 3에서 선 연산을 하여 37
+        document.write("num2 = " + num2 + "<br>"); // 계산값이 적용 x
+        document.write("num3 = " + num3 + "<br>"); //선연산 후 출력이라 37
+
+        document.write("abc" + 23 + "<br>"); //문자열 연산
+        document.write(23 + "abc" + "<br>");
+        document.write(23 + "35" + "<br>");
+        document.write(23 + 35 + "<br>");
+        document.write(23 + 35 + "abc" + "<br>");
+        document.write("abc" + 23 + 35 + "<br><hr>");
+
+    </script>
+    
+</body>
+</html>
+<!-- 
+    순서에 유의하자
+    23 + 35 + "abc"; // 23 + 35 -> 58로 먼저 계산, 58 + "abc" -> "58abc"
+    "abc" + 23 + 35; // "abc" + 23 -> "abc23"로 먼저 계산, "abc23" + 35 -> "abc2335"
+ -->
