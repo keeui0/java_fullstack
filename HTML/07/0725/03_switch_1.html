@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>출근 스위치 문을 만들어보자</h4>
+    <h3>출퇴근 판독</h3><hr>
+    <script>
+        
+        var day = prompt("홍길동님, 요일을 입력해주세요", "");
+        var gogogo = 0;
+
+        switch(day) {
+            case "월"  : gogogo = "출근";                
+            case "화"  : gogogo = "출근";                 
+            case "수"  : gogogo = "출근";                
+            case "목"  : gogogo = "출근";                
+            case "금"  : gogogo = "출근";
+                break;
+            case "토"  : gogogo = "휴무";    
+            case "일"  : gogogo = "휴무";
+                break;
+            default : gogogo = "잘못된 입력"
+            alert(" 잘못된 입력입니다.");
+        }
+
+        if(gogogo != 0){
+            document.write(day + "요일은" + gogogo + "되었습니다.");
+        }
+
+    </script>
+    
+</body>
+</html>
