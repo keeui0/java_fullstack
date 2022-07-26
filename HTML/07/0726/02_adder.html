@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+        function adder(a, b) {
+            var sum;
+            sum = a + b;
+            return sum; //반환값, 리턴값, 
+        }
+    </script>
+</head>
+<body>
+    <h3>함수 adder()</h3><hr>
+    <script>
+        //js 함수도 다른 언어와 동일한 구조로 되어있따.
+        //호출부(주로 main)에서 인수(argument)를 전송하면
+        //함수의 매개변수(parameter)로 값을 받아들여 동작한다.
+        //js에는 변수형을 지정하지 않으므로 매개변수에 변수형을 지정하지 않는다.
+        var n = adder(24567, 98374);
+        document.write("24567 + 98374 = " + n + "<br>");
+    </script>
+    
+</body>
+</html>
+<!-- 함수 반환문(return)
+자바스크립트에서 함수는 반환(return)문을 포함할 수 있다.
+이러한 반환문을 통해 호출자는 함수에서 실행된 결과를 전달받을 수 있다.
+반환문은 함수의 실행을 중단시키고,
+return 키워드는 다음에 명시된 표현식의 값을 호출자에게 반환한다.
+반환문은 배열이나 객체르 포함한 모든 타입의 값을 반환할 수 있다.
+
+ eval() : 함수 내부에 수식을 쓰면 계산해준다.
+ex) var res = eval("2 * 3+4 * 6"); //res는 32
+
+ passrseInt() : 문자열을 정수로 바꾸는 함수.
+                띄어 쓰기로 여러 개의 수가 있으면 첫번째 수만 바꿉니다.
+                공백으로 시작하면 공백은 무시합ㄴ디ㅏ.
+                수가아닌 문자로 시작하면 NaN을 반환합니다.
+ex) var l = parseInt("32"); //"32"를 10진수로 변환, 정수 32 리턴
+    var n = parseInt("0x32"); // "0x32"를 16진수로 해석, 정수 50 리턴
+
+isNaN(var) : 변수 값이 숫자가 아니면 ture 출력 // Not a Number 약어
+            전달받은 값이 숫자인지 아닌지 검사
+ex) inNaN(22) // false 리턴
+
+isNaN("문자열");     //true
+isNaN(undefinded);  //true
+isNaN(NaN);         //true
+-->

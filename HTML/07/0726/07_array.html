@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[]로 배열 만들기</title>
+</head>
+<body>
+    <h3>[]로 배열 만들기</h3><hr>
+    <script>
+        var plots = [20, 5, 8, 15, 20];
+        document.write("var plots = [20, 5, 8, 15, 20]<br>");
+        //plots[1] : i번 째 배열에 값 입력
+        plots[5] = 33;
+        plots[7] = 11;  
+        document.write(plots);
+        document.write("<br>");
+        //배열은 0번 부터 시작하므로 2는 세 번째 값인 8이 출력
+        document.write("plots[2]의 값은 : " + plots[2]);
+    </script>
+    
+</body>
+</html>
+<!-- Object.create() 메소드를 이용한 객체의 생성
+    - 지정된 프로토타입(prototype) 객체와 프로퍼티를 가지고 새로운 객체를
+    - 기존에 정의되어 있는 객체를 가져와서 프로퍼티를 추가하여 객체를 생성
+    - Object.create() 메소드의 첫 번째 인수로는 프로토타입으로 사용할 객체를 전달
+    - 두 번째 인수로는 새로운 객체의 추가할 프로퍼티 정보를 전달
+Object.c reate(프로토타입객체[, 새로운객체의 프로퍼티1, 새로운객체의프로퍼티2, ...]);
+
+var obj - Object.create(null, { // null 프로토타입을 사용하여 새로운 객체를 만들고
+        x: { value: 100, enumerable: true },
+            // x좌표를 나타내는 열거할 수 있는 프로퍼티와
+        y: { value: 200, enumerable: true }
+            // y 좌표를 나타내는 열거할 수 있는 프로퍼티를 추가
+});
+
+obj.x;                      //x좌표
+obj.y;                      //y좌표
+Object.getPrototypeOf(obj); //객체의 프로토타입을 반환
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 전역함수</title>
+    <script>
+        //셋다 자주 쓰이는 함수이므로 알고 있는 것이 좋다.
+        function evalParseIntIsNaN() {
+            //eval : 함수 내부에 수식을 쓰면 계산해준다.
+            //변수값이 문자열(숫자값)이어도 계산된다.
+            var res = eval("2*3 + 4*6"); //res는 32
+            document.write("eval(\"2*3 + 4*6\"는 32)<br>");
+            var m = parseInt("32"); //"32"를 10진수로 전환, 정수 32 리턴
+            document.write("parseInt(\"32\")는 " + m + "<br>");
+            var n = parseInt("0x32"); //"0x32"를 16진수로 해석, 정수 50리턴
+            document.write("parseInt(\"0x32\")는 " + n + "<br>");
+
+            n = parseInt("123");
+            //n = parseInt("hello");
+            //n = "123";
+            //isNaN(var) : 변수 값이 숫자가 아니면 true 출력
+            if(isNaN(n)) //true
+                document.write("hello는 숫자가 아닙니다.")
+        }//인수로 전달된 값이 숫자가 아니라면 숫자로 강제 변환하여 검사 이때 True
+    </script>
+</head>
+<body>
+
+    <h3>eval(), parseInt(), isNaN() 실습</h3><hr>
+    <script>
+        evalParseIntIsNaN();
+    </script>
+</body>
+</html>

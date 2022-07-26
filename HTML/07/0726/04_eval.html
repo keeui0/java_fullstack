@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        function evall() {
+            //prompt를 활용 해 수식 문자열 획득(문자열이다)
+            var str = prompt("수식을 입력하시오", "1 +2 +3 +4 +5");
+
+            if(str == ""){
+                document.write("입력된 식이 없습니다.");
+            }
+            else {
+                var sum = eval(str);
+                document.write(str + " = " + sum);
+            }
+        }
+    </script>
+<body>
+    <h3>상수</h3><hr>
+    <script>
+        //자체 생성한 evall() 함수 호출
+        evall();
+    </script>
+    
+</body>
+</html>
+<!-- 
+parseFloat() : 문자열을 파싱하여 부등 소수점 수(flocating point number)로 반환
+parseFloat("123");          //123
+parseFloat("123.000");      //123.456
+parseFloat("123.456");      //12
+parseFloat("12 34 56");     //123
+parseFloat(" 123 ");        //123
+parseFloat("123 초콜릿");   //123
+parseFloat("초콜릿 123");   //NaN
+
+parseInt() : 문자열을 파싱하여 정수로 변환
+    두 번째 인수로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환
+    전달받은 문자열의 시작이 "0x"로 시작하면 16진수로, "0o"로 시작하면 8진수로 인식
+parseInt("123");        //123
+parseInt("123.000");    //123
+
+Number() : 전달받은 객체의 값을 숫자로 반환
+Number("123");          //123
+Number("123.000");      //123
+
+String() : 전달받은 객체의 값을 문자열로 반환
+String(123);            //123
+String(123.456);        //123.456
+String("123");          //123
+String(new Date());     //현재 날짜에 해당하는 문자열을 반환
+String(null);           //null
+
+
+ -->
