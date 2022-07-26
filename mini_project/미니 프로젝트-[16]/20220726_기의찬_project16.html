@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        #header {
+            position: relative;
+            width: 800px;
+            height: 95px;
+            background-color: #2d3a4b;
+        }
+        #logo {
+            position: absolute;
+            display: flex;
+            height: 40px;
+            margin-top: 30px;
+            margin-left: 20px;
+
+
+        }
+        #top_menu {
+            position: absolute;
+            font-size: 11px;
+            color: white;
+            text-align: right;
+            margin-left: 635px;
+            margin-top: 15px;
+            
+
+        }
+        #main_menu {
+            position: absolute;
+            display: flex;
+            font-size: 16px;
+            color: white;
+            width: 800px;
+            margin-top: 50px;
+            margin-left: 240px;
+
+        }
+        #main_menu li {
+            margin-right: 40px;
+
+
+        }
+        .img_set{
+            position: absolute;
+            display: flex;
+            width: 400px;
+            margin-top: 350px;
+            
+
+            
+        }
+        #content {
+            position: relative;
+            display: block;
+            float: left;
+            width: 800px;
+            height: 432px;
+        }
+        .main {
+            width: 800px;
+            height: 300px;
+            display : block;
+            position: absolute;
+        }   
+        #footer {
+            position: relative;
+            display: block;
+            margin-top: 500px;
+            width: 800px;
+            height: 90px;
+            background-color: #f1f1f1;
+        }
+        #footer img {
+            display:block;
+            margin: auto;
+            width: 600px;
+            height: 70px;
+        }
+        #banner_box1 {
+            width: 400px;
+            height: 150px;
+
+        }
+        #banner_box1 img {
+            display: block;
+            margin: auto;
+            width: 270px;
+            height: 90px;
+        }
+        #banner_box2 {
+            width: 400px;
+            height: 150px;
+
+        }
+        #banner_box2 img { 
+            display: block;
+            margin: auto;
+            width: 270px;
+            height: 90px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo"><img src="logo.jpg"></div>
+        <div id="top_menu">HOME | NOTICE | LOGIN | JOIN</div>
+        <ul id="main_menu">
+            <li>COMPANY</li>
+            <li>PRODUCT</li>
+            <li>CUSTOMER</li>
+            <li>SERVICE</li>
+            <li>RECRUIT</li>
+        </ul>
+    </div>
+    <div id="content">
+        <img class="main" src="main_img.jpg">
+        <ul class="img_set">
+            <li><div id="banner_box1"><img src="banner1.jpg" ></div></li>
+            <li><div id="banner_box2"><img src="banner2.jpg" ></div></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <img src="address.jpg">
+    </div>
+
+</body>
+</html>
