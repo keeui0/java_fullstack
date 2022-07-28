@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function change() {
+        //getElementsByTagName - getElementById와 같은 역할
+        //Id가 태그의 id를 가리켰다면 TagName은 태그명을 의미
+        //태그 객체를 생성해 컨트롤
+        var spanArray = document.getElementsByTagName("span");
+        //spanArray객체에 수(span태그의 수)에 맞춰 for문이 수행되며
+        //수행할 때 마다 span.style.color = "#0101ff" + i*30;
+        //연산에 의해, 글자색이 조금씩 변화하게 됨
+        for(var i=0; i<spanArray.length; i++) {
+            var span = spanArray[i];
+            span.style.color = "#0101ff" + i*30;
+            span.style.fontSize = "20px";
+        }
+    }
+    </script>
+</head>
+<body>
+    <h3>내가 좋아하는과일
+        <button onclick="change()">누르세요</button>
+    </h3><hr>
+    저는 빨간 <span>사과</span>를 좋아해서
+    아침마다 한 개씩 먹고 있어요. 운동할 때는 중간 중간에
+    <span>바나나</span>를 먹지요. 탄수화물 섭취가 빨라
+    힘이 납니다. 또한 달콤한 향기를 품은 <span>체리</span>와
+    여름 냄새 물씬 나는 <span>자두</span>를 좋아합니다.
+    
+</body>
+</html>
+<!-- 
+각각의 span에 있는 단어들에게 아래 속성을 적용하는데 색깔을 달리 주기 위해서
+for문을 활용했다.
+span.style.color 이렇게 차례대로 (.)을 이용해서 속성을 준다.
+
+ -->

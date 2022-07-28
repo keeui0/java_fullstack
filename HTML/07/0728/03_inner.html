@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML 활용</title>
+    <style>
+        /* #이 들어갔기 때문에 id가 result인 태그에 해당 스타일을 적용한다. */
+        #result { 
+            background-color: yellow;
+            color: darkblue;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function change() {
+            //firstP 라는 아이디를 갖는 태그 객체를 생성
+            var p = document.getElementById("firstP");
+            //innerHTML 프로퍼티를 활용해 이미지 삽입
+            //result.innerHTML : id가 resule인 태그에 정보 입력
+            result.innerHTML = 
+            "나의 <img src='C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\mio.png' width= '100px' height='100px'> 고양이"
+        }
+    </script>
+</head>
+<body>
+    <h3>innerHTML 활용 : 아래 글자에 클릭하면 예쁜 고양이가 보입니다.</h3><hr>
+    <!-- 클릭하면 -->
+    <p id="firstP" style="color: blue;"
+        onclick = "change()">
+        여기에 <span style="color: red;">클릭하세요</span>
+    </p>
+    <p id="result">궁금해</p>
+
+    
+</body>
+</html>
+<!-- this 키워드
+객체 자신을 가리키는 자바스크립트 키워드
+DOM 객체에서 객체 자신을 가리키는 용도로 사용
+ex) <div> 태그 자신의 배경음 orange 색으로 변경
+    <div onclick="this.style.backgroundColor='orange'">
+ex) 버튼이 클릭되면 자신의 배경색을 orange로 변경
+    <button onclick="this.style.backgroundColor='orange'">
+-->

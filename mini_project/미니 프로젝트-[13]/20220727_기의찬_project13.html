@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: inline-block;
+            position: relative;
+        }
+        ul {
+            list-style-type: none;
+        }
+        #mem_title {
+            width: 700px;
+            height: 25px;
+            margin-top: 10px;
+            margin-left: 20px;
+            border-bottom: solid 2px #1b894d;
+        }
+        #mem_form {
+            display: block;
+            top: 30px;
+            width: 700px;
+            margin-left: 20px;
+            font-family: "돋움";
+            font-size: 12px;
+            color: #888888;
+            padding-top: 5px;
+        }
+        .row {
+            height: 30px;
+            margin-top: 10px;
+            border-bottom: solid 1px #cccccc;
+        }
+        input {
+            position: relative;
+            display: block;
+            width: 80px;
+            height: 16px;
+            border: solid 1px #cccccc;
+            flex-direction: column;
+            text-align: right;
+        }
+        select {
+            position: absolute;
+            display: block;
+            width: 80px;
+            height: 20px;
+            border: solid 1px #cccccc;
+            font-size: 12px;
+        }
+        option {
+            position: absolute;
+            display: flex;
+        }
+        .col1 {
+            position: absolute;
+            display: block;
+            float: left;
+            text-align: right;
+            width: 120px;
+
+        }
+        .col2 {
+            position: absolute;
+            display: inline-block;
+            text-align: left;
+            margin-left: 10px;
+            width: 300px;
+            left: 150px;
+        }
+        .col2  ul  {
+            width: 400px;
+            position: absolute;
+            display: flex;
+            float: left;
+        }
+        .col2 ul li {
+            margin-left: 10px;
+        }
+        #buttons {
+            position: absolute;
+            display: inline;
+            margin-left: 250px;
+            margin-top: 20px;
+        }
+        #buttons img {
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mem_title">
+        <img src="join_title.jpg">
+    </div>
+    <form>
+        <ul id="mem_form">
+            <li class="row">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_id.jpg">
+                    </li>
+                    <li class="col2">
+                        <ul>
+                            <li><div><input type="text"></div></li>
+                            <li><div><img src="chk_id.jpg"></div></li>
+                            <li>영문, 숫자 조합으로 4~12자 이내</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row" id="pw_confirm">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_pw.jpg">
+                    </li>
+                    <li class="col2">
+                        <ul>
+                            <li><input type="password"></li>
+                            <li>영문, 숫자 조합으로 4~12자 이내</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row" id="pw_confirm">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_pw2.jpg">
+                    </li>
+                    <li class="col2">
+                        <input type="password" style="left: 10px;">
+                    </li>
+                </ul>   
+            </li>
+            <li class="row" id="name">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_name.jpg">
+                    </li>
+                    <li class="col2">
+                        <ul>
+                            <li><input type="text"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row" id="birthday">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_birthday.jpg">
+                    </li>
+                    <li class="col2">
+                        <ul>
+                            <li><input type="text" style="width:40px"></li>
+                            <li>년&nbsp;</li>
+                            <li><input type="text" style="width:20px"></li>
+                            <li>월&nbsp;</li>
+                            <li><input type="text" style="width:20px"></li>
+                            <li>일&nbsp;</li>
+                            <li><input type="radio" style="width:10px" name="year" checked></li>
+                            <li>음력&nbsp;</li>
+                            <li><input type="radio" name="year" style="width:10px"></li>
+                            <li>양력</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row" id="email">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_email.jpg">
+                    </li>
+                    <li class="col2">
+                        <ul>
+                            <li><input type="text"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row">
+                <ul class="item">
+                    <li class="col1">
+                        <img src="txt_hp.jpg">
+                    </li>
+                    <li class="col2">
+                        <ul>
+                            <li><input type="text" style="width:30px;"></li>
+                            <li>-</li>
+                            <li><input type="text" style="width:40px;"></li>
+                            <li>-</li>
+                            <li><input type="text" style="width:40px;"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row" id="job">
+                <ul class="item">
+                    <li class="col1"><img src="txt_job.jpg"></li>
+                    <li class="col2">
+                        <ul>
+                            <li>
+                                <select>
+                                    <option>직업선택</option>
+                                    <option>직장인</option>
+                                    <option>사업가</option>
+                                    <option>학생</option>
+                                    <option>기타</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="row" id="target">
+                <ul class="item">
+                    <li class="col1"><img src="txt_target.jpg"></li>
+                    <li class="col2">
+                        <ul>
+                            <li><input type="checkbox" style="width:10px;"></li>
+                            <li>시험대비</li>
+                            <li><input type="checkbox" style="width:10px;"></li>
+                            <li>업무상</li>
+                            <li><input type="checkbox" style="width:10px;"></li>
+                            <li>취미</li>
+                            <li><input type="checkbox" style="width:10px;"></li>
+                            <li>기타</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>        <!-- mem_form -->
+
+        <div id="buttons">
+            <img src="btn_cancel.jpg">&nbsp;<img src="btn_ok.jpg">
+        </div>
+    </form>
+    
+</body>
+</html>

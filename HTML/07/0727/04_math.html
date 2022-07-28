@@ -1,0 +1,65 @@
+<!-- 
+substring(uploadFileName.lastIndexof("\\" + 1));
+indexOf(문자)
+    - 해당 문자가 들어있는 위치를 알려 줍니다.(문자가 없다면 -1 반환)
+    ex) "abcde", indexOf("e")에는 0부터 시작하기 때문에 4의 값을 반환
+    (lastIndexof는 반대로 맨 뒤에서부터 읽음)
+
+Math
+    수학 계산을 위한 프로퍼티와 메소드 제공
+    new Math()로 객체 생성하지 않고 사용
+
+난수 발생
+Math.random() : 0~1 보다 작은 랜덤한 실수 리턴
+Math.floor(m)은 m의 소수점 이하를 제거한 정수 리턴
+
+//0~99까지 랜덤한 정수를 10개 만드는 로드
+for(i=0; i<10; i++){
+    var m = Math.random()*100; //m은 0~99.999 보다 작은 실수 난수
+    var n = Math.floor(m);     //m에서 소수점 이하를 제거한 정수(0~99 사이)
+    document.write(n + " ");
+}
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math를 활용한 구구단 연습</title>
+    <script>
+        //아래서 실행되는 난수 함수
+        function randomInt() {
+            //(복습) (Math.random()*a + 1) -> 부터 a까지 난수 생성
+            return Math.floor(Math.random()*9 + 1);
+        }
+        //Math.random()* + 1는 1부터 10까지
+        //Math.floor(m)은 m의 소수점 이하를 제거한 정수 리턴
+        //Math.floor를 안해주면 소숫점 난수가 발생하기 때문에 해줘야한다.
+    </script>
+ </head>
+ <body>
+    <h3>Math를 활용한 구구단 연습</h3><hr>
+    <script>
+        //구구단 문제 생성, ques는 문자열로 쓰임
+        //randomInt : 랜덤 난수 출력(임의 함수)
+        var ques = randomInt() + "*" + randomInt();
+        //사용자로 부터 답 입력, 0은 최초값
+        var user = prompt(ques + " 값은 얼마입니까?", 0);
+        //취소 버튼이 클릭된 경우(null)
+        if(user == null) {
+            document.write("구구단 연습을 종료합니다.");
+        }
+        else {
+            var ans = eval(ques);
+            //구구단 정답 계산, 문자열인 ques를 숫자로 변환
+            if(ans == user) //정답과 사용자 입력 비교
+                document.write("정답! ");
+            else
+                document.write("아니요! ");
+        document.write(ques + "=" + "<strong>" + ans + "</strong>입니다.<br>");
+        }
+    </script>
+    
+ </body>
+ </html>
