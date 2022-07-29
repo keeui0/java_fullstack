@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 변경</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            //버튼 클릭 이벤트가 발생하면 실행된다.
+            $("button").click(function(){
+                //toggleClass : addClass. removeClass를 통합한 명령
+                //처음 누르면  add, 한 번 더 실행되면 remove가 된다.
+                $("h1, h2, p, div").toggleClass("red");
+            });
+        });
+    </script>
+    <style>
+        .red {
+            color: red;
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>HTML5</h1>
+    <h2>CSS3</h2>
+    <h3>자바스크립트</h3>
+    <div>제이쿼리</div>
+    <button>CSS 적용/해제</button>
+</body>
+</html>
