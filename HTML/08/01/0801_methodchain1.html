@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>            
+            $(document).ready(function() {
+                $("#panel").css("color","red") 
+            //메소드 체이닝 : 메소드들을 .으로 연결해 여러 동작들을 순서대로 수행
+            //slide를 2초간 내리고, 투명도를 0.3으로 바꾼 후
+            //slide를 다시 2초간 올려 사라지게 한다                  
+                    .slideDown(2000)                    
+                    .fadeTo("slow",0.3)
+                    .slideUp(2000);
+
+                $("#slide").css("color","black")
+                //슬라이드의 상단은 투명도만 잠시 바뀜                          
+                    .fadeTo("10000",0.3)
+                    .fadeTo("10000",1.0);
+                });
+        </script>
+        <style>
+            #slide, #panel {
+                padding: 5px;
+                text-align: center;
+                background-color: #e5eecc;
+                border: solid 1px #c3c3c3;
+            }
+            #panel {
+                padding: 50px;
+                display:none;
+                background-color: #ffff00;
+            }
+        </style></head>
+    <body>
+        <div id="slide">[오늘의 공지사항]</div>
+        <div id="panel">오늘은 jQuery 프로그램을 학습합니다.<br>
+            예제를 작성한 후 실행해 보세요</div>
+    </body>
+</html>
