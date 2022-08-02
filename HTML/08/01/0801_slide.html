@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>
+            //slideUp/Down을 통해 미끄러지듯 움직이게 할 수 있음
+            $(document).ready(function() {
+                $("#panel").click(function() {
+                    $("#panel").slideUp("fast");
+                });
+                $("#slide").click(function() {
+                    $("#panel").slideDown(2000);
+                });
+                $("#flip").click(function() {
+                    $("#panel").slideToggle("slow");
+                });
+                $("#stop").click(function() {
+                    $("#panel").stop();
+                });
+            });
+        </script>
+        <style>
+            #slide, #panel, #flip {
+                padding: 5px;
+                text-align: center;
+                background-color: #e5eecc;
+                border: solid 1px #c3c3c3;
+            }
+            #panel {
+                padding: 70px;
+                display: none;
+                background-color: #ffff00;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="slide">[오늘의 공지사항]</div>
+        <div id="panel">오늘은 jQuery 프로그램을 학습합니다.<br>
+            예제를 작성한 후 실행해 보세요</div>
+        <div id="flip">Toggle slide</div>
+        <p></p>
+        <button id="stop">Stop sliding</button><br>
+    </body>
+</html>
+<!-- 1) encodeURI() 함수 (인코딩)
+  (1) URI의 특정한 문자를 UTF-8로 인코딩해 하나, 둘, 셋, 혹은 
+                                        네 개의 연속된 이스케이프 문자로 나타냄
+  (2) 두 개의 대리 문자로 이루어진 문자만 이스케이프 문자 네 개로 변환
+  (3) 매개변수 : 완전한 URI
+  (4) 반환 값 : 주어진 문자열을 URI로서 인코딩한 새로운 문자열
+  (5) encodeURI() 함수는 URI에서 특별한 뜻을 가진 문자는 인코딩 하지 않음
+  (6) 인코딩 불가 문자 : A~Z a~z 0~9 ; , / ? : @ & = + $ - _ . ! ~ * ' ( ) #
+  (7) 위와 같이 완전한 URI를 형성하는데 필요한 문자는 인코딩 하지 않음
+  (8) 따라서 완전한 URI를 인코딩하려면 encodeURIComponent() 
+                                                      함수를 사용하는 것이 좋음 
+-->
+

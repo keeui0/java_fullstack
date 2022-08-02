@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>        
+        //객체를 클릭하면 move 명령이 수행되고            
+            function move(object, speed){
+    //객체를 정지시킨 후 animate 메소드에 의해 시작점에서 좌측으로 500px 만큼
+    //지정된 속도로 이동함
+                $(object).stop().animate({left:-500,}, speed);
+            }
+    //초기화 상태라는 버튼을 클릭하면, 객체를 정지시킨 후, animate메소드에 의해
+    //원점 복귀
+            function back(){
+                $('.moving img').stop().animate({left:0,},);
+            }
+        </script>
+        <style>
+            .moving {
+               border: solid 1px #000000;
+               margin: 20px auto 0 auto;
+               text-align: right;
+               /*이미지 위치를 x축에서 550px 만큼 우측으로 이동시킴*/
+               width: 650px;
+            }
+            .moving img {
+                cursor: pointer;
+                position: relative;
+            }
+        </style></head>
+    <body>
+        <div class="init">
+    <button type="button" onclick="back('.moving img')">초기화 상태</button><br>
+<!-- 버튼 클릭 시 moving 클래스 내의 img 요소들을 인수로 back 함수 호출 -->
+<!-- onclick="back('.moving img')" 에서 () 안의 '.moving img' 문구는 필요 없음 -->
+        </div>
+        <div class="moving">
+<!-- 각 이미지 클릭 시 자기 자신 객체와 속도 값을 인수로 move 함수 호출 -->
+        <img onclick="move(this,6000)" src="c:\Html\media/mio.png"/><br>
+        <img onclick="move(this,3000)" src="c:\Html\media/mio.png"/><br>
+        <img onclick="move(this,1000)" src="c:\Html\media/mio.png"/><br>
+        </div>
+    </body>
+</html>
+<!-- 
+    코딩 막힌 부분
+    자바스크립트 코드와 제이쿼리 코드를 섞어 쓸 수 있다
+    자바스크립트 함수 내에 동작 명령 관련 제이쿼리 코드를 넣어준다
+    제이쿼리의 속성:속성값 은 속성값에 ""를 써줘야 한다
+    $(i).animate({right: '350px'}, ms); 매개변수로 받은 ms 위치
+ -->

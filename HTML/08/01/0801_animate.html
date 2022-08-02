@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function() {
+                //#은 id를 표현, b1, b2, b3 버튼을 의미
+                $("#b1").click(function() {
+                    //버튼을 누르면 img 태그 그림의 크기가 변경된다
+                    //animate메소드에 의해 자연스럽게 크기가 변경됨
+                    $("img").animate( {
+                        width: '100px'
+                    });
+                });
+                $("#b2").click(function() {
+                    $("img").animate( {
+                        width: '200px'
+                    });
+                });
+                $("#b3").click(function() {
+                    $("img").animate( {
+                        width: '300px'
+                    });
+                });
+            });
+        </script>
+        <style>
+            /* . 있으면 class임
+            css_pic 이름의 클래스를 가지는 div 태그에 적용됨*/
+            .css_pic {
+                height: 430px;
+                text-align: center;
+            }
+            /*css_pic 클래스 내에 존재하는 img 태그에 스타일 적용*/
+            .css_pic img {
+                /*기본 폭 250px, 높이는 이미지 파일의 종횡비에 의해 자동 변경*/
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>ANIMATION 실습1</h3><hr>
+        <div class="css_pic">
+            <p>버튼을 누르면 그림의 크기가 바뀝니다.</p>
+            <button id="b1">가로 100픽셀</button>
+            <button id="b2">가로 200픽셀</button>
+            <button id="b3">가로 300픽셀</button><br><br>
+            <img name="pic1" src="c:\\Html/media/mio.png"/>
+        </div>
+    </body>
+</html>
