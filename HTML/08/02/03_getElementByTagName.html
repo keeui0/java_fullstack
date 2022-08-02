@@ -12,21 +12,21 @@
             var x = document.getElementsByTagName("li");
             var text = "";
 
-            for(var i=0; i < x.length; i++){
+            for(var i=0; i<x.length; i++){
                 //이 값들을 text 변수에 붙임
                 text += x[i].innerHTML;
                 text += "&nbsp&nbsp";
             }
             //결과값을 id = "demo"인 div 태그에 전송함
-            document.getElementById("demo").innerHTML = text;
+            document.getElementById("demo").innerHTML=text;
         }
     </script>
 </head>
 <body>
-    <button onclick="choise()">클릭하시오</button><br>
+    <button onclick="choice()">클릭하시오</button><br>
     <ul>
         <li>아메리카노</li>
-        <li>카페라떼</li>
+        <li>카페라떼</li> 
         <li>콜드블루</li>
     </ul>
     <div id="demo"></div>
