@@ -1,0 +1,121 @@
+<!--게시글 수정, 게시글 보기 상태에서 수정을 누른다-->
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미니 프로젝트</title>
+<!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- 상단 메뉴 부분 -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
+	<a class="navbar-brand" href="index.html">CitaCampus
+		<img src="kh.logo.png" width="30" height="30" ></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	        data-target="#navMenu">
+		<span class="navbar-toggler-icon"></span>        
+	</button>
+	<div class="collapse navbar-collapse" id="navMenu">
+		<!--롤오버 스타일(마우스 커서에 의해 색이 변함) 구현-->
+		<!--(1)ul클래스에 nav 클래스를 추가하고-->
+		<ul class="navbar-nav">
+			<!--(2)li클래스에 nav-item 클래스를 추가하고-->
+			<li class="nav-item">
+				<!--(3)a클래스에 nav-link 클래스를 추가하면 롤오버 스타일 표현-->
+				<a href="board_main.html" class="nav-link">자유게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main.html" class="nav-link">유머게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_travel.html" class="nav-link">여행게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main.html" class="nav-link">스포츠게시판</a>
+			</li>
+		</ul>
+		<!--ml-auto : 우측정렬됨-->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a href="login.html" class="nav-link">로그인</a>
+			</li>
+			<li class="nav-item">
+				<a href="join.html" class="nav-link">회원가입</a>
+			</li>
+			<li class="nav-item">
+				<a href="modify_user.html" class="nav-link">정보수정</a>
+			</li>
+			<li class="nav-item">
+				<a href="index.html" class="nav-link">로그아웃</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container" style="margin-top:100px">
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="card shadow">
+				<div class="card-body">
+					<!--전송 방식은 post 방식이지만 action이 자신으로 돼있으므로 무의미하다-->
+					<form action="board_modify.html" method="post">
+						<!--form-group : 입력항목의 그룹화-->
+						<div class="form-group">
+							<!--board_writer_name으로 두 태그를 결합-->
+							<!--disabled : 해당 태그의 값을 입력하거나 변경할 수 없음-->
+							<label for="board_writer_name">작성자</label>
+							<input type="text" id="board_writer_name" name="board_writer_name" class="form-control" value="홍길동" disabled="disabled"/>
+						</div>
+						<div class="form-group">
+							<label for="board_date">작성날짜</label>
+							<input type="text" id="board_date" name="board_date" class="form-control" value="2018-7-20" disabled="disabled"/>
+						</div>
+						<div class="form-group">
+							<label for="board_subject">제목</label>
+							<input type="text" id="board_subject" name="board_subject" class="form-control" value="제목입니다"/>
+						</div>
+						<div class="form-group">
+							<label for="board_content">내용</label>
+							<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none">본문입니다</textarea>
+						</div>
+						<div class="form-group">
+							<label for="board_file">첨부 이미지</label>
+							<!--img src를 활용해 이미지 삽입-->
+							<img src="logo.png" width="100%"/>	
+							<!--file 인풋 타입으로 파일 경로 지정-->
+							<input type="file" name="board_file" id="board_file" class="form-control" accept="image/*"/>					
+						</div>
+						<div class="form-group">
+							<!--text-right : 태그 요소 우측 정렬-->
+							<div class="text-right">
+								<!--submit로 지정된 페이지로 정보 전송-->
+								<!--action의 위치가 동일하므로 아무 일도 발생하지 않음-->
+								<!--btn btn-primary, btn btn-info 모두 버튼 스타일 클래스 -->
+								<button type="submit" class="btn btn-primary">수정완료</button>
+								<!--취소를 누르면 수정하기를 누르기 전 상세보기 페이지로 이동-->
+								<a href="board_read.html" class="btn btn-info">취소</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+</div>
+
+<div class="container-fluid bg-dark text-white" style="margin-top:50px;padding-top:30px;padding-bottom:30px">
+	<div class="container">
+		<p><a href="https://www.iei.or.kr/main/main.kh" target="_blank" 
+			style="color: white;">kh정보교육원</a></p>
+		<p>게시판 예제</p>
+		<p>사업자번호 : 000-111-222</p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택된 물품 계산하기</title>
+    <script>
+        var sum=0;
+        function calc(cBox) {
+            //체크되면 cBox(checkbox 객체) checked 상태가 되고
+            if(cBox.checked)
+            //해당 객체의 value 값을 더함
+                sum += parseInt(cBox.value);
+            else
+                sum -= parseInt(cBox.value);
+            //합살 결과를 id=sumtext인 객체에 전송
+            //getElementById로 연산을 하는 방법
+            //1) 함수 내부 변수에 메소드를 대입해 객체 변수 생성
+            // 객체에 .메소드를 활용해 정보 입/출력
+            //2) document 또는 innerHTML 등을 활용해 객체가 가진 정보를 태그에 전송
+            document.getElementById("sumtext").value = sum;
+        }
+    </script>
+</head>
+<body>
+    <h3>물품을 선택하면 금액이 자동 계산됩니다.</h3><hr>
+    <form>
+        <!-- 체크박스에 체크를 하면 바로 calc 함수로 객체 정보를 이동시킴 -->
+        <input type="checkbox" name="cap"   value="10000"
+            onclick="calc(this)">모자 1만원
+            <input type="checkbox" name="shose"   value="30000"
+            onclick="calc(this)">구두 3만원
+            <input type="checkbox" name="bag"   value="80000"
+            onclick="calc(this)">명품가방 8만원<br>
+            지불하실 금액 <input type="text" id="sumtext" value="0">
+    </form>
+    
+</body>
+</html>
+<!-- 
+타이머 (Timer) - setTimeout() 메소드
+    (1) setTimeout()메소드는 명시된 시간이 지난뒤에 지정된 함수를 호출
+    window.setTimeout(timeoutID);
+    (2) 이 메소드는 setTimeout() 메소드에 의해 함수가 호출되기 전에
+        실행되어야 호출을 취소 가능
+    (3) 함수가 호출된 이후에 이 메소드를 호출하면 아무런 동작도 하지  않음
+    var timeoutId;
+
+function startTimeout() {
+    timeoutId = setTimeout(printCurrentDate, 2000);
+    // 2초 후에 printCurrentDate 함수를 실행하는 동작이 예약되면
+} // timeoutID 반환하여 저장
+
+function cancelTimeout(){
+    clearTimeout(timeoutId);
+    // timeoutId의 setTimeout 메소드가 2초 되기 전에 실행하면 예약 취소
+}
+
+function printCurrentDate() {
+    document.getElementById("date").innerHTML += new Date() + "<br>";   
+}
+
+
+ -->

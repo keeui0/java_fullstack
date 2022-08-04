@@ -1,0 +1,273 @@
+<!--게시판, 어디를 눌러도 항상 게시판으로 이동함-->
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미니 프로젝트</title>
+<!-- Bootstrap CDN 
+BootstrapD은 반응형 웹 어플리케이션 제작에 특화된 풀스택 웹 프론트엔드 프레임워크이며 무료로 사용 가능한 오픈소스.
+부트스트랩에서 CSS와 JS 사용을 위해 링크를 참조한다.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<style>
+	/*자유게시판 타이틀에 css style을 적용하기위해 h4태그에 이미지를 넣어주는 코드 */
+    h4{    
+    background-image:url("background1.png");
+    background-repeat: no-repeat;
+    }
+</style>
+</head>
+<body>
+<!-- 상단 메뉴 부분, 이 부분은 항상 중복 
+navbar : 상단 메뉴바, navbar-expand-md : 중간크기 , fixed-top : 상단에 고정, shadow-lg: 그림자의 번짐정도 -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
+	<!-- 서브 컴포넌트의 지원
+	navbar-brand : 회사명이나 제품명, 프로젝틈명 등 메인이 되는 text를 적어준다.
+	이 페이지는 CitaCampus 홈페이지므로  CitaCampus로 지정
+	brand의 a 태그 안에 img 태그를 넣어 kh로고를 넣어주었다. -->
+	<a class="navbar-brand" href="index.html">CitaCampus
+	<img src="kh.logo.png" width="30" height="30" ></a>
+	<!-- toggle 방식으로 눌리는 메뉴바 버튼을 만든다.
+	data target = id가 navMenu를 가리킨다. -->
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	        data-target="#navMenu">
+		<span class="navbar-toggler-icon"></span>       
+	</button>
+	<!-- collapse navbar-collapse : 화면너비가 넓으면 navbar-collapse이 표시되고, navbar-toggle은 숨겨짐
+		화면너비가 작으면 navbar-collapse은 숨겨지고, navbar-toggle은 표시됨
+		대신 버튼을 누르면 세로 드롭다운 형식으로 나타남 -->
+	<div class="collapse navbar-collapse" id="navMenu">
+		<!-- navbar-nav : 전체 높이 및 경량 탐색(드롭다운 지원 포함). -->
+		<ul class="navbar-nav">
+			<!--nav-item : 항목추가
+			클릭 시 각각 지정한 html 링크로 넘어가게 된다. 
+			따로 같은 폴더 내에 main, humor, trable, sports html 파일을 만들어둠.-->
+			<li class="nav-item"> 
+				<a href="board_main.html" class="nav-link">자유게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_humor.html" class="nav-link">유머게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_travel.html" class="nav-link">여행게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_sports.html" class="nav-link">스포츠게시판</a>
+			</li>
+		</ul>
+		
+		<!-- ml-auto 값을 살펴보면
+			.ml-auto {margin-left: auto !important;} 으로 나온다.
+			즉) 왼쪽의 값을 자동으로 계산해 margin을 나눠갖게 되는 것.
+			!important는 다른 설정이 있더라도 가장 최우선 순위로 취급하게 됩다는 뜻
+			오른쪽 상단에 nav-item 항목을 만든다. -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a href="login.html" class="nav-link">로그인</a>
+			</li>
+			<li class="nav-item">
+				<a href="join.html" class="nav-link">회원가입</a>
+			</li>
+			<li class="nav-item">
+				<a href="modify_user.html" class="nav-link">정보수정</a>
+			</li>
+			<li class="nav-item">
+				<a href="index.html" class="nav-link">로그아웃</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+<!-- 게시글 리스트 -->
+<!-- 페이지 중앙에 탐색 모음을 래핑 하거나 고정 또는 정적 상단 탐색 모음.
+container 의 콘텐츠만 중앙에 배치하도록 탐색 모음을 추가할 수 있다 . -->
+<div class="container" style="margin-top:100px">
+	<div class="card shadow">
+		<div class="card-body">
+			<!-- card-body에는 카드 내용이 들어간다 
+				.card-title로 제목을, .card-text로 내용을 구분한다.
+				title에 css style 태그로 글자에 색을 줬다. -->
+			<h4 class="card-title" style="color: rgb(255, 227, 151);">자유게시판</h4>
+			<!-- <table> 태그에 .table-hover 클래스를 추가하면 테이블에 마우스를 올렸을 때 마우스 커서가 있는 행이 다른 색으로 변한다.
+				즉, mouseover 효과가 생김. -->
+			<table class="table table-hover" id='board_list'>
+				<!-- thead : 헤딩 셀 그룹, 즉) 맨 위에 title이 되는 행 -->
+				<thead>
+					<tr>						
+						<!--d-none : 공간이 좁아지면 가려짐-->
+						<!--d-md-table-cell : 테이블 화면 출력-->
+						<th class="text-center d-none d-md-table-cell">글번호</th>
+						<!--w-50 : 해당 성분이 테이블 전체 너비의 50%를 점유함-->
+						<!--글제목을 누르면 board_read.html 로 이동함-->
+						<th class="w-50">제목</th>
+						<th class="text-center d-none d-md-table-cell">작성자</th>
+						<th class="text-center d-none d-md-table-cell">작성날짜</th>
+					</tr>
+				</thead>
+			<tbody>
+				<tr>
+					<td class="text-center d-none d-md-table-cell">1</td>
+					<!-- text를 클릭했을 때 이동하는 url 페이지, target_blank로 새로운 페이지 open -->
+					<td><a href='https://www.khan.co.kr/national/national-general/article/202201310958001' target="_blank">
+						코로나 확진자</a></td>
+					<td class="text-center d-none d-md-table-cell">박은하 기자</td>
+					<td class="text-center d-none d-md-table-cell">2021-01-31</td>
+					
+				</tr>
+				<tr>
+					<td class="text-center d-none d-md-table-cell">2</td>
+					<td><a href='https://www.yna.co.kr/view/AKR20220131013400004?input=1195m' target="_blank">
+						설 연휴 고속도로 현황</a></td>
+					<td class="text-center d-none d-md-table-cell">이승연 기자</td>
+					<td class="text-center d-none d-md-table-cell">2021-01-31</td>
+					
+				</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">3</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">4</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">5</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">6</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">7</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">8</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">9</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+					<tr>
+						<td class="text-center d-none d-md-table-cell">10</td>
+						<td><a href='board_read.html'>글 제목 입니다</a></td>
+						<td class="text-center d-none d-md-table-cell">홍길동</td>
+						<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+						
+					</tr>
+				</tbody>
+			</table>
+			<!--d-none d-md-block : 너비가 특정 사이즈 이상이면 보이게 아니면 감춤-->
+			<div class="d-none d-md-block">
+				<!--pagination : 다음 페이지로 넘기기 구현-->
+				<!--justify-content-center : 가운데 정렬-->
+				<ul class="pagination justify-content-center">
+					<!--page-item : 가로로 배열된 페이지 네이션 만들 때 활용, li태그에 사용-->
+					<li class="page-item">
+						<!--page-link : 가로로 배열된 페이지 네이션 만들 때 활용, a태그에 사용-->
+						<a href="#" class="page-link">이전</a>
+					</li>
+					<li class="page-item">
+						<!--#을 활용해 클릭해도 지금 페이지로 이동
+						게시글이 현재 1,2번만 다르고 모두 동일하기에
+						다른 페이지 이동해도 표시가 안 난다.-->
+						<a href="#" class="page-link">1</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">2</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">3</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">4</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">5</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">6</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">7</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">8</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">9</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">10</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">다음</a>
+					</li>
+				</ul>
+			</div>
+			<!--d-block : 모든 화면에서 보이기-->
+			<!--d-md-none : md 크기에서만 숨기기-->
+			<div class="d-block d-md-none">
+				<ul class="pagination justify-content-center">
+					<li class="page-item">
+						<a href="#" class="page-link">이전</a>
+					</li>
+					<li class="page-item">
+						<a href="#" class="page-link">다음</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="text-right">
+				<!--글쓰기 버튼을 누르면 board_write.html로 이동한다-->
+				<a href="board_write.html" class="btn btn-primary">글쓰기</a>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<!-- container-fluid: 전체 가로폭을 정하는 클래스 값
+좌우로 꽉 찬 레이아웃을 만들 때 사용한다. -->
+<div class="container-fluid bg-dark text-white" style="margin-top:50px;padding-top:30px;padding-bottom:30px">
+	<div class="container">
+		<!-- text 클릭하면 kh정보교육원 링크로 이동한다. -->
+		<p><a href="https://www.iei.or.kr/main/main.kh" target="_blank" 
+			style="color: white;">kh정보교육원</a></p>
+		<!-- <p>https://www.iei.or.kr/main/main.kh</p> -->
+		<p>게시판 예제</p>
+		<p>사업자번호 : 000-111-222</p>
+	</div>
+</div></body></html>
+
+
+
+
+
+
