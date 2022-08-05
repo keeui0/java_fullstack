@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 페이지의 자동 스크롤</title>
+    <script>
+        //1초당 autoscroll 함수 실행
+        function starScroll(interval) {
+            setInterval("autoScroll()", interval);
+        }
+        function autoScroll() {
+            //한 번에 스크롤을 10픽셀 씩 위로 이동
+            window.scrollBy(0, 10); //10픽셀 위로 이동
+        }
+    </script>
+</head>
+<!-- <body onload="starScroll(1000)">
+    body에서 웹페이지가 로드되면 starScroll 함수의 인자 1000을 전달한다.
+setInterval("autoScroll()", interval);
+을 통해 일정 간격으로 autoScroll() 함수가 실행되고 매개변수로 interval을 받는다.
+window.scrollBy(0, 10);
+autoScroll의 함수는 위의 처럼 스크롤이 밑으로 10px만큼 내려가는 것.! -->
+<body onload="starScroll(1000)">
+    <h3>자동 스크롤 페이지</h3><hr>
+    <h3>꿈길(이동순)</h3>
+    꿈길에<br>
+    발자취가 있다면<br>
+    님의 집 창밖<br>
+    그 돌계단 깊이 이미 오래 전에<br>
+    모래가 되고 말았을 거예요.<br><br>
+    하지만<br>
+    그 꿈길에서 자취 없다 하니<br>
+    나는 그것이 정말 서러워요<br><br>
+    이 밤도<br>
+    나는 님의 집 창밖<br>
+    혹시라도 님의 목소리가 들려올까<br>
+    고개 숙이고 엿들어요.<br>
+
+    
+</body>
+</html>

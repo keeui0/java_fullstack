@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval()로 텍스트 회전</title>
+</head>
+<body>
+    <h3>텍스트가 자동 회전하며, 마우스로 클릭하면 중단합니다.</h3><hr>
+    <!-- span 태그 부분의 글자가 계속 순환됨 -->
+    <div><span id="div" style="background-color: yellow;">
+        자동 회전하는 텍스트입니다.</span></div>
+
+        <script>
+            var div = document.getElementById("div");
+            var timerID = setInterval("doRotate()", 200);
+                //200밀리초 주기로 doRotate() 호출
+
+            div.onclick = function(e) { //마우스 클릭 이벤트 리스너
+                clearInterval(timeID);  //타이머 해제, 문자열 회전 중단
+            }
+
+            function doRotate() {
+                //div 태그의 텍스트 입력
+                var str = div.innerHTML;
+                //첫 번째 문자를 획득
+                var firstChar = str.substr(0, 1);
+                //두 번째 부터 마지막 까지 문자 저장
+                var remains = str.substr(1, str.length-1);
+                //첫 번째 문자를 가장 뒤로 보냄
+                str = remains + firstChar;
+                //변경 정보를 div 태그로 전송, timer가 지날 때 마다 동작 반복
+                div.innerHTML = str; //문자열을 하나씩 지우고 뒤로 이동시킴
+            }
+        </script>
+    
+</body>
+</html>
+<!-- 
+    <div><span id="div" style="background-color: yellow;">
+    자동 회전하는 텍스트입니다.</span></div> id가 div인 텍스트를 생성한다.
+
+    var timerID = setInterval("doRotate()", 200);
+    setIntervall로 doRotate 함수를 반복 실행
+
+    var remains = str.substr(1, str.length-1);
+    첫번째 문자 제외 나머지 문자들을 remains에 저장한 다음
+
+    str = remains + firstChar;
+    첫 번째 문자를 가장 마지막에 더해준다.
+    그렇기에 오른쪽 그림처럼 첫 번째 글자인 "자" 가 가장 마지막으로 가게 되는 것.
+
+    ex) 동 회전하는 텍스트입니다.자
+ -->
