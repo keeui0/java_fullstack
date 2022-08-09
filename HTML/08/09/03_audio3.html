@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오디오 재생 종료 ended 이벤트 받기</title>
+</head>
+<body>
+    <h3>오디오 연주가 끝나면 배경이 노란색으로 바뀝니다.</h3><hr>
+    <audio id="audio" src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\bear.mp4" autoplay controls></audio>
+    <script>
+        var audio = document.getElementById("audio");
+        audio.onended = function (e) {
+            document.body.style.backgroundColor = "yellow";
+        }
+    </script>
+
+</body>
+</html>
+<!-- HTML5의 위치 정보 서비스란?
+컴퓨터/모바일 장치의 위도와 경도를 자바스크립트 코드에게 ㄱ오급
+
+geolocation 객체
+위치 정보 서비스를 제공하는 자바스크립트 객체
+    navigator.geolocation, window.navigator.geolocation
+
+위치 정보 서비스 2가지
+    현재 위치 서비스 : 요청 시 현재 위치를 알려주는 서비스
+    반복 위치 서비스 : 위치가 변경될 때마다 반복하여 알려주는 서비스
+
+getCurrentPosition() 현재위치 얻기
+getCurrentPosition() 메소드
+    ※ navgator.getlocation.getCurrentPosition(showYourLocation, [showEorrMsg], [option]);
+
+    (1) getCurrentPosition() 메소드를 이용하면 사용자의 위치에 대한
+    위도와 경도 값을 얻을 수 있다.
+    (2) 이 메소드의 첫 번째 인수로는 가져온 사용자의 위치 정보를 출력하는 함수가 들어간다.
+
+function findLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showYourLocation);
+        //showYourLocation : 가져온 정보 출력 함수
+    } else {
+        loc.innerHTML =
+        "이 문장은 사용자의 웹 브라우저가 Geolocation API를 지원하지 않을 때 나타납니다!";
+    }
+}
+-->

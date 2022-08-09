@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showPosition(pos) {
+            //p태그에 아래 내용을 출력
+            document.getElementById("demo").innerHTML =
+            //pos.coords.latitude : 위도 -> x축
+            //pos.coords.longitude : 경도 -> y축
+                "위도 : " + pos.coords.latitude +
+                "<br>경도 : " + pos.coords.longitude;
+        }
+        function locationEventHandler() {
+
+            if (navigator.geolocation) {
+                //사용자의 위치를 받는 메소드, showPosition 함수를 실행
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                //p태그에 다음 내용을 출력
+                document.getElementById("demo").innerHTML = 
+                "브라우저가 Geolocation을 지원하지 않습니다."
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>현재 위치가 궁금하신가요?</p>
+    <!-- 버튼을 클릭하면 locationEventHandler함수 실행 -->
+    <button onclick="locationEventHandler()">위도/경도</button>
+    <!-- 결과 값이 출력되는 태그 -->
+    <p id="demo"></p>
+    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 오디오 제어</title>
+</head>
+<body>
+    <h3>자바스크립트로 오디오 제어</h3><hr>
+    <audio id="audio" src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\bear.mp4"></audio>
+    <div id="msg">오디오 제어 메세지 출력</div>
+        <button id="play" onclick="control(event)">play</button>
+        <button id="pause" onclick="control(event)">pause</button>
+        <button id="replay" onclick="control(event)">replay</button>
+        <button id="vol-" onclick="control(event)">vol-</button>
+        <button id="vol+" onclick="control(event)">vol+</button>
+        <button id="mute on/off" onclick="control(event)">mute on/off</button>
+
+    <script>
+        var div = document.getElementById("msg");
+        var audio = document.getElementById("audio");
+        function control(e) {
+            var id = e.target.id;
+            if(id == "play") { //play 버튼
+                audio.play(); //재생
+                div.innerHTML = audio.src + "재생합니다.";
+            }
+            else if(id == "pause")  { //pause 버튼
+                audio.pause(); //일시 중지
+                div.innerHTML = audio.src + "일시 중지되었습니다.";
+            }
+            else if(id == "replay") { //replay 버튼
+                audio.load(); //src에 지정된 미디어 다시 로딩
+                audio.play(); //처음부터 다시 재생
+                div.innerHTML = audio.src + "를 처음부터 재생합니다.";
+            }
+            else if(id == "vol-") { //vol- 버튼
+                audio.volume -= 0.1; //음량 0.1 감소
+                if(audio.volume < 0.1) audio.volume = 0;
+                div.innerHTML = "음량 0.1 감소." + "현재 " + audio.volume;
+            }
+            else if(id == "vol+") { //vol+ 버튼
+                audio.volume += 0.1; //음량 0.1 증가
+                if(audio.volume > 0.9) audio.volume = 1.0;
+                div.innerHTML = "음량 0.1 증가" + "현재 " + audio.volume;
+            }
+            else if(id == "mute on/off") { //mute on/off 버튼
+                audio.muted = !audio.muted; //음소거 토글
+                if(audio.muted) div.innerHTML = "음소거";
+                else div.innerHTML = "음소거 해제";
+            }
+        }
+    </script>
+    
+</body>
+</html>
+<!-- onended 리스너
+오디오/비디오의 재생이 완료되었을 때 호출되는 이벤트 리스너
+ex) 리스너 작성 사례
+<audio id="audio" src="media/EmbraceableYou.mp3" autoplay controls></audio>
+
+<script>
+    var audio = document.getElementById("audio");
+    audio.onended = function (e) {
+            //ended 이벤트 처리 코드
+    }
+</script>
+
+loop 속성이 설정되면 onended 이벤트 리스너 호출되지 않음
+    <audio src="..." loop>
+        loop 속성이 있으면 ended 이벤트 발생하지 않음
+
+현재 재생중인 미디어 변경
+    다음 3단계 필요
+        audio.src="media/Aegukga.mp3";  //새로운 미디어 지정
+        audio.load();                   //src에 지정된 미디어 새로 로딩. 생략 가능
+        audio.play();                   //로딩된 미디어
+-->

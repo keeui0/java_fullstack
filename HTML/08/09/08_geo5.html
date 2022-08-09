@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="map"></div>
+    <button onclick="initMap(seoul)">Seoul</button>
+    <button onclick="initMap(London)"London></button>
+    <script>
+        function initMap(pos) {
+            var myLatlng = pos;
+            var map = new google.maps.Map(document.getElementById('map'),{
+                zoom: 4,
+            }
+            )
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map : map,
+                title : 'Click to zoom'
+            });
+
+            map.addListener('center_changed', function() {
+                window.setTimeout(function () {
+                    map.panTo(marker.getPosition());
+                }, 3000);
+            });
+
+            marker.addListener('click', function(){
+                map.setZoom(8);
+                map.setCenter(marker.getPosition());
+            });
+        }
+        var seoul = {lat : 37.566535, lng : 126.977969};
+        var london = {lat : 51.507351, lng : -0.127758};
+
+        initMap(seoul); //default
+    </script>
+    
+</body>
+</html>

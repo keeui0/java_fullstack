@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>선으로 삼각형 그리기</title></head>
+<body>
+<h3>선으로 삼각형 그리기</h3><hr>
+<canvas id="myCanvas" 
+			style="background-color:aliceblue"
+			width="200" height="150"></canvas>
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+
+	context.beginPath(); // 빈 경로 만들기
+	context.moveTo(120, 20); // (120, 20)을 시작점으로 설정
+	context.lineTo(20, 50); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+	context.lineTo(150, 120); // 경로에 (20, 50)에서 (150, 120)까지 직선 추가
+	context.lineTo(120, 20); // 경로에 (150, 120)에서 (120, 20)까지 직선 추가
+	context.strokeStyle="magenta"; // 선의 색
+	context.stroke(); // 경로를 캔버스에 그린다
+</script> 
+</body></html>
+<!-- 도형 그리는 과정
+경로(path) 만들기
+    캔버스에 경로에 담긴 도형 모두 그리기
+경로(path) 만들기
+    그리고자 하는 도형들을 컨텍스트 내  경로에 담는 과정
+캔버스에 도형 그리는 순서
+    beginPath() - 새로운 빈 경로 만들기
+    moveTo(), lineTo(), rect(), arc() - 경로에 도형 담기
+    Stroke() – 경로 속의 도형을 캔버스에 그리기 
+-->
+
