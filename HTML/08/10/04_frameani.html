@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            //변수를 선언합니다.
+            var count = 0;
+            //img 태그 객체 생성
+            var image = document.getElementById('image');
+            //이미지 배열 객체를 생성
+            var frames = [
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\0.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\1.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\2.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\3.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\4.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\5.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\6.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\7.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\8.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\9.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\10.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\11.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\12.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\13.png',
+                'C:\\Users\\hi-guro\\Desktop\\keeui\\java_fullstack\\media\\14.png',
+            ];
+            //setInterval : 해당 동작을 반복적으로 실행함
+            setInterval(function() {
+                //count % frame.length %연산이기 때문에 길이값에 도달하지 않는 이상
+                //해당 값이 그대로 출력됨
+                image.src = frames[count % frames.length];  //1~14번 그림 반복
+                //다음 이미지 출력을 위한 +1
+                count = count + 1;
+            }, 1000 / 20); //1초 동안 반복
+        };
+    </script>
+</head>
+<body>
+    <img id="image" />
+    
+</body>
+</html>

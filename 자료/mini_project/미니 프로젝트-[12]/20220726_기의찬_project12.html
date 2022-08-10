@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "돋움";
+            font-size: 12px;
+            color: #444444;
+            list-style: none;
+        }
+        #login_title {
+            width: 585px;
+            padding: 10px;
+            margin: 50px;
+            font-size: 50px;
+            border: solid 5px #e6e2d7;
+        }
+        #login_box {
+            width: 610px;
+            height: 283px;
+            margin-top: 20px;
+            margin-left: 50px;
+            border: solid 2px #cccccc;
+            border-radius: 20px;
+        }
+        div img#member_login {
+            margin-left: 50px;
+            margin-top: 30px;
+            display: flex;
+        }
+        div ul li#left {
+            position: absolute;
+        }
+        div ul li img#key {
+            margin-left: 70px;
+        }
+        div ul#login {
+            position: absolute;
+            display: block;
+            float: left;
+        }
+        #right {
+            margin-right: 20px;
+            margin-bottom: 50px;
+            margin-left: 300px;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        #id_pass {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #id_pass ul li {
+            font-size: 15px;
+        }
+        #login_btn {
+            position: absolute;
+            margin-left: 160px;
+            margin-top: -55px;
+        }
+        .align {
+            text-align: right;
+            margin-left: -40px;
+            width: 200px;
+            font-size: 20px;
+            flex-direction: column;
+        }
+        #auto_login {
+            margin-top: 20px;
+            text-align: left;
+        }
+        #join_find li{
+            list-style-type: disc;
+        }
+        #join_find {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 id="login_title">로그인</h2>
+    <div id="login_box">
+        <img id="member_login" src="login_img.jpg">
+        <ul id="login">
+            <li id="left">
+                <img id="key" src="login_img02.jpg">
+            </li>             <!-- left -->
+            <li id="right">
+                <ul id="input_button">
+                    <li id="id_pass">
+                        <ul>
+                            <li>
+                                <div class="align">
+                                <span>아 이 디</span>
+                                <input type="text" size="20px" style="height: 20px;">
+                                </div>
+                            </li>                            <!-- id -->
+                            <li id="pass">
+                                <div class="align">
+                                <span>비밀번호</span>
+                                <input type="password" size=20px; style="height: 20px;" >
+                                </div>
+                            </li>                            <!-- pass -->
+                        </ul>
+                    </li>                    <!-- id_pass -->
+                    <li id="login_btn">
+                        <img src="btn_login.jpg">
+                    </li>
+                </ul>                <!-- input_button -->
+
+                <div id="auto_login">
+                    <input type="checkbox">자동 로그인
+                </div>
+
+                <ul id="join_find">
+                    <li>아직 회원이 아니세요?</li>
+                    <li>아이디 또는 비밀번호를 잊으셨나요?</li>
+                </ul>
+            </li>            <!-- right -->
+        </ul>        <!-- login -->
+    </div>     <!-- login_box -->
+    
+</body>
+</html>

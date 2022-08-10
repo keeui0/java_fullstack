@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+* {
+	margin : 0 auto;
+	color : #333333;
+}
+
+body {
+	font-family : "나눔바른고딕", sans-serif;
+}
+/* body 태그 안에있는 글자 폰트 설정 */
+
+ul {
+	padding : 0;
+}
+/* ul padding : 0; 설정 */
+
+ul>li {
+	list-style : none;
+}
+/* ul > li 리스트 스타일 none */
+
+a {
+	text-decoration : none;
+	color : inherit;
+}
+/* 하이퍼링크 밑줄 제거 */
+
+.header_cover {
+	width : 100%;
+	height : 100px;
+	border-bottom : 1px solid #fff;
+	position : relative;
+	z-index : 50;
+}
+/* 상단 메뉴 설정 */
+
+.header_cover:hover {
+	background-color : rgba(255,255,255,0.8);
+	border-bottom : 1px solid #bfa586;
+}
+/* 상단메뉴에 마우스가 올라갈 시 */
+
+.header_cover:hover .main>li>a {
+	color : #666;
+}
+/* 상단메뉴 .main > li > a 에 마우스가 올라갈 시 */
+
+.header_cover>header>h1>a{
+	display : inline-block;
+	width : 200px;
+	height : 50px;
+	background-image : url(../images/logo1.png);
+}
+/* header > h1 > a 설정 */
+
+.header_cover:hover>header>h1>a {
+	background-image : url(../images/logo3.png);
+}
+/* header > h1 > a 에 마우스가 올라갈 시 */
+
+header {
+	width : 1400px;
+	height : 100px;
+}
+/* header 설정 */
+
+
+header:after {
+	content : "";
+	display : block;
+	clear : both;
+}
+/* header 컨텐츠 뒤에 */
+
+header>h1 {
+	width : 400px;
+	float : left;
+	margin-top : 25px;
+}
+/* header > h1 설정 */
+
+header>h1>a {
+	display : block;
+	width : 200px;
+	height : 50px;
+	background-image : url(../images/logo1.png);
+}
+/* header > h1 > a 설정 */
+
+header>nav {
+	width : 1000px;
+	float : left;
+}
+/* header > nav 설정 */
+
+.main {
+	width :600px;
+	margin-left : 250px;
+	float : left;
+	margin-top : 35px;
+}
+/* div > header > nav > ul.main 설정 */
+
+.main>li {
+	width : 150px;
+	height : 100px;
+	float : left;
+	position : relative;
+}
+/* div > header > nav > ul.main > li 설정 */
+
+.main>li>a {
+	display : inline-block;
+	width : 150px;
+	height : 30px;
+	text-align : center;
+	line-height : 30px;
+	font-size : 20px;
+	color : #fff;
+}
+/* div > header > nav > ul.main > li > a 설정 */
+
+.main>li>a:hover {
+	color : #bfa586 !important;
+}
+/* div > header > nav > ul.main > li > a 에 마우스 올라갈 시 */
+
+.add {
+	color : #bfa586;
+}
+/* common.js 에서  .main > li에 mouseover, mouseout에 따라 추가, 삭제 */
+
+.sub {
+	position : absolute;
+	width : 600px;
+	left : -75px;
+	z-index : 50;
+	margin-top : 50px;
+}
+/* div > header > nav > ul > li > ul 설정 */
+
+.sub>li {
+	float : left;	
+}
+/* div > header > nav > ul > li > ul.sub > li 설정 */
+
+.sub>li>a {
+	display : inline-block;
+	width : 120px;
+	height : 30px;
+	text-align : center;
+	line-height : 30px;
+}
+/* div > header > nav > ul > li > ul.sub > li > a 설정 */
+
+.sub>li>a:hover {
+	color : #bfa586;
+}
+/* div > header > nav > ul > li > ul.sub > li > a 에 마우스 올라갈 시 */
+
+.sub_bg {
+	width : 100%;
+	height : 60px;
+	position : relative;
+	z-index : 49;
+}
+
+.contents {
+	min-height : 600px;
+	position : relative;	
+}
+
+.footer_cover {
+	width : 100%;
+	height : 100px;
+	border-top : 1px solid #ccc;
+	background-color : #fff;
+	margin-top : 50px;
+}
+
+footer {
+	width : 1400px;
+	height : 100px;
+	position : relative;
+}
+
+footer:after {
+	content : "";
+	display : block;
+	clear : both;
+}
+
+footer>h2 {
+	width : 300px;
+	float : left;
+	text-align : center;
+	margin-top : 28px;
+}
+
+footer>h2>a>img {
+	width : 180px;
+	text-align : center;
+}
+
+.copy {
+	width : 1100px;
+	height : 100px;
+	float : left;
+	font-size : 0.9em;
+	text-align : center;
+	margin-top : 20px;
+	line-height : 30px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(function(){
+            $("#map").append(getmap());
+        });
+        function getmap() {
+            //geolocation을 지원하는지 확인한다.
+            if (!navigator.geolocation)
+                throw "위치 정보가 지원되지 않습니다.";
+
+            //결과를 표시할 새로운 <img> 요소를 생성한 다음 반환
+            var image = document.createElement("img");
+
+            // geolocation요청
+            navigator.geolocation.getCurrentPosition(setMapURL, showError);
+            return image;
+            //geolocation 요청이 성공하면 호출되는 콜백 함수 :
+            function setMapURL(pos) {
+                //전달된 인자 객체로부터 위치 정보를 가져온다
+                var latitude = pos.coords.latitude;     //적도의 북쪽 기준 각도인 위도
+                var longitude = pos.coords.longitude;   //그리니치 천문대의 동쪽 기준 각도인 경도
+                var accuracy = pos.coords.accuracy;     //미터 단위의 정확도
+
+                latitude = latitude.toPrecision(6);
+                longitude = longitude.toPrecision(6);
+                //위도와 경도의 소숫점 이하 자리가 너무 길어서 유효숫자를 6자리로 자른다.
+                //해당 위치의 구글 지도에 대한 정적 이미지 URL을 생성한다.
+                var map_url = "http://maps.google.com/maps/api/staticmap" + "?center= "
+                + latitude + ", " + longitude + "&size= 640x 640&sensor=true";
+
+                //대략적으로 지도 줌 레벨을 계산하여 설정한다.
+                var zoomlevel = 20;     //대부분 최대한 확대하여 시작한다.
+                if (accuracy > 80)      //위치가 부정확 할 경우 축소한다.
+                    zoomlevel -= Math.round(Math.log(accuracy / 50) / Math.LN2);
+                //zoom 지도에서 표시와 크기를 나타내는 데 설정범위는 0 ~ 22
+                map_url += "&zoom= " + zoomlevel;   //줌 레벨을 URL에 추가한다.
+
+                //API key 추가(키 발급 필요, 키가 없으면 지도 요청시 응답 상태 코드가 403(Forbidden))
+                map_url += "&key=AIzaSyAzJDfu647Nsan8ECaZVLReSSzbCP8I7aA";
+
+                //이제 이미지 객체에 지도를 출력한다.
+                image.src = map_url;
+
+                var now = new Data(position.timestamp);
+                //TimeStamp : 1970년 1월 1일 자정부터 지금까지 지난 시각을 초 단위로 바꾼 값
+                //맵스 스테틱에서 키를 받아보자
+                //타임스탬프를 사용하면 날짜를 숫자 형태로 간편하게 나타낼 수 있다.
+
+                var text = "현재 시간 " + now.toUTCString() + "<br>";
+                text += "현재 위치 (위도 " + latitude + "º, 경도 " + longitude + "º)<br>";
+                text += "정확도 " + accuracy + "m<br>";
+                document.getElementById("msg").innerHTML = text;
+            }
+            //geolocation 요청이 실패하면 호출되는 콜백 함수 : 
+            function showError(err) {
+                var errors = [
+                    err.message,
+                    "사용자가 권한 거부",
+                    "위치를 찾을 수 없음",
+                    "요청 응답 시간 초과"
+                ];
+                alert("["+err.code+"] " + errors[err.code]);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h3>getCurrentPosition()로 현재 위치 파악</h3><hr>
+    <div id="msg">이곳에 위치 정보 출력</div>
+    <div id="map"></div>
+    
+</body>
+</html>

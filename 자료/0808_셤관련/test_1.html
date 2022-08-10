@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            background-color: gainsboro;
+            position: absolute;
+            display: flex;
+            width: 400px;
+            height: 300px;
+            margin: auto;
+            top: 200px;
+            left: 100px;
+            text-align: left;
+        }
+        li {
+            list-style-type: none;
+        }
+        ul {
+            position: relative;
+            display: block;
+            padding: 0;            
+        }
+        .left {
+            position: relative;
+            float: left;
+            display: block;
+            margin-left: 5px ;
+            font-size: 20px;
+        }
+        .left li{
+            margin-top: 10px;
+        }
+        .right {
+            position: absolute;
+            display: block;
+            text-align: left;
+            float: right;
+            font-size: 20px;
+        }
+        .right li {
+            margin-top: 3px;
+        }
+        button {
+            position: absolute;
+            display: flex;
+            cursor: pointer;
+        }
+        .btn {
+            position: absolute;
+            display: block;
+            background-color: green;
+            border: none;
+            border-radius: 5px 5px;
+            font-size: 15px;
+            width: 50px;
+            height: 35px;
+            top: 250px;
+            right: 180px;
+            margin: auto;
+        }
+        input {
+            border: hidden;
+            background-color: gainsboro;
+            border-bottom: 2px black dashed;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        #IdError {
+            color: red;
+            font-size: 20px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script> 
+        $("#Idinput").click(function(){
+            if($("IdError").css('display') == 'none')
+                $("IdError").css("display", "block");
+
+
+
+        })
+        
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <ul class="left">
+                <li>아이디</li>
+                <li>패스워드</li>
+                <li>패스워드 확인</li>
+                <li>이메일</li>
+                <li>주소</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="right">
+            <li>
+                <input type="text" id="Idinput" name="Id" style="width: 190px;" >
+                <div id="IdError" >필수 입력 항목입니다.</div>
+
+            </li>
+            <li><input type="password" name="Password" style="width: 190px;"></li>
+            <li><input type="password" name="Password" style="width: 190px;"></li>
+            <li><input type="text" name="email" style="width:80px">@
+                <input type="text" name="email" style="width:80px;"></li>
+            <li><input type="text" name="address" style="width: 190px;"></li>
+            </ul>
+            <button class="btn">가입</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_DOM</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        //jQuery 형태
+        $(document).ready(function(){
+            //10회 반복합니다.
+            for(var i=0; i<10; i++) {
+                //문서 객체를 생성합니다.
+                //해당 태그 내용을 appendTo를 활용해 body태그 뒤에 오게 함
+                //body 태그 안에 h1 태그를 생성하고 그 안에 값을 입력한 것과 동일
+                $('<h1>Create Document Object + ' + i + '</h1>').css({
+                    backgroundColor: 'black',
+                    color : 'red'
+                }).appendTo('body');
+                //$(객체).appendTo(대상) 객체를 대상의 뒷부분에 추가
+            }
+
+        })
+
+        
+    </script>
+</head>
+<body>
+    <script>
+        //이벤트를 연결합니다.
+        $(document).ready(function(){
+            //10회 반복합니다.
+            for(var i=0; i < 10; i++) {
+                //문서 객체를 생성합니다.
+
+                var $dynamic = $('<h1>Create Document Object + ' + i + '</h1>').css({
+                    backgroundColor: 'black',
+                    color : 'red'
+                });
+                //문서 객체를 body 태그 안에 추가함
+                $('body').append($dynamic)
+            }
+        })
+    </script>
+    
+</body>
+</html>
+<!-- 요소의 추가
+(1) 제이쿼리는 새로운 요소나 콘텐츠를 손쉽게 추가할 수 있도록 여러 메소드를 제공
+
+(2) 기존 요소의 내부에 추가
+    - .append()         선택한 요소의 '마지막'에 새로운 요소나 콘텐츠를 추가
+    - .prepend()        선택한 요소의 '처음'에 새로운 요소나 콘텐츠를 추가
+    - .appendTo()       선택한 요소를 해당 요소의 마지막에 삽입
+    - .prependTo()      선택한 요소를 해당 요소의 처음에 삽입
+
+(3) 기존 요소의 외부에 추가
+    - .before()         선택한 요소의 '바로 앞에' 새로운 요소나 콘텐츠를 추가
+    - .after()          선택한 요소의 '바로 뒤에' 새로운 요소나 콘텐츠를 추가
+    - .insertBefore()   선택한 요소를 '해당 요소의 앞에' 삽입
+                            동작은 before() 메소드와 같지만,
+                            소스(source)와 타겟(target)의 위치가 서로 반대
+    - .insertAfter()    선택한 요소를 '해당 요소의 뒤에' 삽입
+                            동작은 .after() 메소드와 같지만,
+                            소(source)와 타겟(target)의 위치가 서로 반대
+
+(4) 기존 요소를 포함하는 요소의 추가
+    - .wrap()           선택한 요소'를 포함하는 새로운 요소를 추가
+    - .wrapAll()        선택한 모든 요소'를 포함하는 새로운 요소를 추가
+    - .warpInner()      선택한 요소에 포함되는 새로운 요소를 추가
+-->

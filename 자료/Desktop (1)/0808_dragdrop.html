@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head><title>드래그앤드롭</title>
+    <style>
+        /*#을 썼으므로 id*/
+        #shopping_cart {
+            width:610px;
+            height:100px;
+            padding:10px;
+            border:1px dotted red;
+        }
+        /*img 태그에 크기 적용*/
+        img {
+            width:100px;
+            height:100px;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+//preventDefault : a, 태그나 submit 태그가 눌렸을 때 창의 새로고침을 막는 메소드
+            ev.preventDefault();            
+        }
+        function drag(ev) {
+        //ev.dataTransfer.setData("text", ev.target.id) : 이벤트핸들러에서
+        //전달할 데이터를 지정, 키-값의 형태
+            ev.dataTransfer.setData("text", ev.target.id);
+//text 라는 임의의 변수에  drag되는 요소의  id값을 세팅한다
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            //data 객체에 text 키에 대한 값을 입력함(얻어온다)
+            var data = ev.dataTransfer.getData("text");
+            //data 객체를 target 객체에 자식 객체로 만드는 것
+            ev.target.appendChild(document.getElementById(data));
+        }
+//setData(type, data) : 끌어다 놓기 위해 새로운 type을 정의하고 끌어올 data를 저장
+//getData(type) : setData에서 정의한 type을 가져온다
+    </script></head>
+    <body>
+        <p>원하는 상품을 카트에 담으세요</p>
+        <!--이곳이 쇼핑카트 공간-->
+        <!--ondragover="allowDrop(event) 함수를 활용해 드롭 명령을 받아들임-->
+<div id="shopping_cart" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+    <!--draggable=true 명령을 통해 드래그가 가능하도록 설정
+    ondragstart="drag(event)" 를 통해, 드래그 이벤트가 실행되면 함수를 실행시킴-->
+<img id="img1" src="c:\Html\media/apple.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+<img id="img2" src="c:\Html\media/banana.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+<img id="img3" src="c:\Html\media/button.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+<img id="img4" src="c:\Html\media/jajang.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+<img id="img5" src="c:\Html\media/jjambbong.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+<img id="img6" src="c:\Html\media/tangsuyuk.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+<img id="img7" src="c:\Html\media/spongebob.png" draggable="true" 
+                                                    ondragstart="drag(event)">
+    </body>
+</html>
+<!-- 드래그 앤 드롭 API는 웹 페이지 내의 요소를 사용자가 자유롭게 드래그할 수 있도록
+     설정해준다.
+드로그 앤 드롭 이벤트는 마우스로 객체(object)를 드래그해서 놓을 때까지 
+여러 단계의 이벤트가 순차적으로 발생하게 된다. 
+1.  모든 이벤트 리스너 메소드는 DataTransfer 객체를 반환하는데, 
+    이렇게 반환된 DataTransfer 객체는 드래그 앤 드롭 동작에 관한 정보를 
+    가지고 있게 된다.
+2.  웹 페이지 내의 모든 요소는 draggable 속성을 사용하여 
+    드래그될 수 있는 객체(draggable object)로 변환될 수 있다.
+3.  드래그될 수 있는 객체로 만든 후에는 ondragstart 속성을 통해 
+    DataTransfer 객체의 setData() 메소드를 호출한다.
+    setData() 메소드는 드래그 되는 대상 객체의 데이터 (data)와 
+    타입(data type)을 설정한다.  
+4.  ondragover 속성은 드래그 되는 대상 객체가 어느 요소 위에 놓일 수 있는지 설정한다. 기본적으로 HTML 요소는 다른 요소의 위에 위치할 수 없다. 
+따라서 다른 요소 위에 위치할 수 있도록 만들기 위해 요소의 기본 동작을 막아야 한다. 
+이 작업을 event.preventDefault() 메소드를 호출하는 것만으로 간단히 설정할 수 있다. 
+-->
