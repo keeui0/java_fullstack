@@ -1,0 +1,63 @@
+<!-- 
+    masonry는 벽돌을 쌓는 공사, 석조라는 의미를 가지고 있으며,
+사진 공유 서비스인 핀터레스트가 인기를 끈 이후에 
+핀터레스트와 같은 스타일의 레이아웃이 크게 인기를 끌었다. 
+masonry는 동적인 레이아웃을 구성할 때 사용할 수 있다.
+핀터레스트와 같은 타일형 웹 페이지를 만들 때 사용
+Masory 플러그인 홈페이지에서 플러그인을 다운받고 
+HTML 페이지와 같은 폴더에 넣어 폴더 구성하기
+
+CDN 방식을 사용했음  CDN인 
+<script src = "http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+ columnWidth 속성을 110px로 지정한 이유
+.box 선택자의 margin 속성을 5px로 지정했기 때문에
+ 스크립트 내부에 div 태그의 width 속성을 100px로 지정함
+따라서 사각형 너비 = 100+(5*2)=110px
+$('body').masonry({
+columnWidth:110
+});
+ -->
+
+<!DOCTYPE html>
+<html lang="kr">
+    <head><title>masonry</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!--masonry : 여러 이미지들을 페이지 크기와 폭에 맞게 알아서 잘 배치해줌-->
+    <!--SNS의 이미지 표시나 웹 쇼핑몰 제품 표현 시 활용--> 
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <style>
+        * { margin:0; padding: 0; }
+        .box {
+            background: black;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        //이벤트를 연결합니다.
+        $(document).ready(function() {
+            //문서 객체를 생성합니다
+            for(var i=0; i<100; i++) {
+                //jQuery와 appendTo를 활용해 body 태그 안에 이미지 객체 생성
+                $('<div></div>').addClass('box').css({
+                    width: 100,
+                    //random메소드를 활용해 임의의 높이를 갖는 100개의 박스 생성
+                    height: Math.floor(Math.random() * 100) + 50
+                }).appendTo('body');
+        //세로 랜덤함수로 0~99+50을 floor 하면 51~150까지 세로가
+        //랜덤으로 지정됨
+        //이것을 <div></div> 로 만들고 body에 추가한다.
+        //Math.floor은 매스랜덤이 처음에 0인데 1로 시작하게 해주는 것이다.
+        //하나 안에 여러개 넣어도 된다
+            }
+            //Masonry 플러그인을 적용합니다.
+            $('body').masonry({
+                columnWidth: 110
+                //body의 masonry함수를 이용해서 열넓이를 110으로 지정
+            });
+        });
+    </script>
+    </head>
+    <body>
+<!--appendTo 메소드를 활용해 <div></div>태그가 이 안에 위치하게 됨-->
+    </body>
+</html>

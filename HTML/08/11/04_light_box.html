@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Box</title>
+    <link rel="stylesheet" href="jQuery.lightbox-0.5.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- lightbox : 이미지를 클릭하면 작은 창으로 이미지를 상세하게 보여줌 -->
+    <script src="jquery.lightbox-0.5.js"></script>
+    <script>
+        //jQuery 형태로 이벤트 사용
+        $(document).ready(function(){
+            //lightBox 형태로 출력
+            $('a.light').lightBox();
+        });
+    </script>
+</head>
+<body>
+    <!-- 클릭하면 lightBox 메소드를 통해 이미지가 확대 생성됨 -->
+    <a class="light" href="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\image1.jpg">LightBox</a>
+    <a class="light" href="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\image2.jpg">LightBox</a>
+    <a class="light" href="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\image3.jpg">LightBox</a>
+    
+</body>
+</html>
+<!-- 
+light box
+    배경을 어둡게 하고 정보는 밝게 보여주는 플러그인
+
+Masonry 플러그인
+    핀터레스트와 같은 타일형 웹 페이지를 만들 때 사용
+
+
+ -->

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 뷰포트 : 실제 내용이 표시되는 영역
+    PC화면과 모바일 화면의 픽셀 표시 방법이 다르기 때문에 모바일 화면에서 의도한 대로
+표시되지 않음.
+뷰포트를 지정하면 가ㅣ기 화면에 맞춰 확대/축소해서 내용 표시 1~10
+ -->
+ <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        width: 100%;
+        background: #000;
+    }
+    nav ul {
+        float: left;
+        height: 50px;
+        margin: 5px 15px;
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    nav ul li {
+        float: left;
+    }
+ </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <section id="intro">
+            <img src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\pic1.jpg" alt="테디 베어">
+            <img src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\pic2.jpg" alt="민들레">
+            <img src="C:\Users\hi-guro\Desktop\keeui\java_fullstack\media\pic3.jpg" alt="고양이">
+        </section>
+        <section id="desc" class="text">
+            <p>있는 이것을 능히 보이는 투명하되 이상의 낙원을 칼이다.
+                위하여 같이 힘차게 오직 듣는다. 뭇 창고에 천지는 말이다. 같이,
+                있는 되는 열매를 말이다. 있는 이것을 능히 보이는 투명하되 이상의 낙원을 칼이다.</p>
+        </section>
+        <footer>
+            <p>뭇 창공에 천지는 말이다. 같이, 있는 되는 열매를 말이다.</p>
+        </footer>
+    </div>
+    
+</body>
+</html>
+<!-- 
+ex) 미디어 유형이 'screen'이면서 최소 너비가 '200px'이고 최대 너비가
+'360px'일 경우에 적응할 CSS 정의하는 구문
+    @media screen and (min-width:200px) and (max-width:360px) {
+        ...
+    }
+
+
+ -->
