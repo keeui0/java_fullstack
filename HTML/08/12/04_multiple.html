@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워커 태스크 생성</title>
+</head>
+<script>
+    var Mworker = null;
+    function startWorkTask() {
+        //워커 태스크를 생성하고 calcMultiple.js를 실행하도록 지시
+        Mworker = new Worker("calcMultiple.js");
+    }
+    function calculate() {
+        //발생할지 모를 오류에 대비하기 위해 지정
+        if(Mworker == null) {
+            alert("워커 태스크가 만들어지지 않았음")
+            return;
+        }
+        var parameters = {
+            op1 : document.getElementById("op1").value,
+            op2 : document.getElementById("op2").value
+        };
+        //입력 받은 점수를 워커 태스크로 보내기
+        //키 값의 형태로 전송
+        Mworker.postMessage(parameters);
+        //워커 태스크로부터 결과 수신 대기
+        Mworker.onmessage = function (e) {
+            //연산결과를 획득
+            document.getElementById("result").value = e.data;
+        }
+    }
+</script>
+<!-- onload를 활용해 startWorkTask()를 바로 실행시킴 -->
+<body onload="startWorkTask()">
+    <h3>곱셈하기</h3><hr>
+    <form>
+        <!-- 데이터 입력, type="number"로 지정해 숫자만 받아들이도록 하고
+        텍스트바 우측에 상하 화살표 생성 -->
+        <input id="op1" type="number" value="0"> x
+        <input type="number" id="op2" value="0">
+        <!-- 곱하기를 누르면 calculate 함수 실행 -->
+        <input type="button" onclick="calculate()" value="곱하기">
+        <input type="text" id="result" value="0">
+    </form>
+    
+</body>
+</html>

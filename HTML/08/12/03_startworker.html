@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워커 태스크 만들기</title>
+</head>
+<script>
+    function startWorkTask() {
+        //워커 태스크 생성
+        w = new Worker("increment.js");
+        w.postMessage("100");   //워커 태스크에 100을 보냄
+        //보낸 후 결과 값을 m 변수에 입력
+        w.onmessage = function(e) {
+            var m = e.data;
+            //전송받은 답을 alert로 출력
+            alert(m);
+        }
+    }
+</script>
+<!-- startWorkTask() 워커 태스크 실행 -->
+<body onload="startWorkTask()">
+    <h3>100으로 보내고 워커 태스크에 더하기 1을 시키는 예</h3><hr>
+    
+</body>
+</html>

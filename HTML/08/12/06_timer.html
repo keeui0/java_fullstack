@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머를 가진 웹 워커 만들기</title>
+</head>
+<body>
+    <h3>타이머를 가진 웹 워커 만들기</h3><hr>
+    <div><span id="timer">타이머 카운트</span></div>
+    <!-- 버튼을 눌렀을 때 각자 함수 실행 -->
+    <button id="start" onclick="start()">start</button>
+    <button id="stop" onclick="stop()">stop</button>
+    <script>
+        var addWorker = new Worker("timer.js"); //워커 태스크 생성
+
+        function start() { //start 버튼을 눌렀을 때
+            addWorker.postMessage("start"); //e에 start 데이터 전송
+        }
+        function stop() {
+            addWorker.postMessage("stop");  //e에 stop 데이터 전송
+        }
+        addWorker.onmessage = function(e) { //워크 태스크의 데이터 timer에 출력
+            document.getElementById("timer").innerHTML = e.data;
+        }
+    </script>
+    
+</body>
+</html>
