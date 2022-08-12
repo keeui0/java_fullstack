@@ -8,12 +8,9 @@ onmessage = function(e) {
         timerID = setInterval(myCallback, 1000);
     }
     if(str == "stop"){
-        timerID = clearInterval(myCallback);
+        clearInterval(timerID);
         return;
-
     }
-
-    
 }
     
 
