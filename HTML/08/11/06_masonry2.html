@@ -5,9 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src  = "http://masonry.desandro.com/masonry.pkgd.min.js"></script>
     <style>
-        
+        /* *표시는 전체를 뜻함, HTML 페이지의 모든 개체는 마진과 패딩 0이라는 뜻 */
+        * {
+            /* .은 클래스를 나타냄 */
+            /* 배경화면을 각각 지정하고 마진을 5px씩 지정 */
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+        .box1 {
+            background-image: url("C:\\Users\\hi-guro\\Documents\\GitHub\\java_fullstack\\media\\apple.png");
+            margin: 5px;
+        }
+        .box2 {
+            background-image: url("C:\\Users\\hi-guro\\Documents\\GitHub\\java_fullstack\\media\\banana.png");
+            margin: 5px;
+        }
+        .box3 {
+            background-image: url("C:\\Users\\hi-guro\\Documents\\GitHub\\java_fullstack\\media\\mango.png");
+            margin: 5px;
+        }
     </style>
+    <script>
+        //이벤트를 연결합니다.
+        $(document).ready(function(){
+            //문서 객체를 생성합니다.
+            //100개의 개체를 생성하고
+            for(var i=0; i < 100; i++) {
+                //if문의 %를 활용해 3가지 그림을 생성함
+                if( i % 3 == 0) {
+                    //클래스가 box1인 div 태그를 생성한후
+                    $("<div></div>").addClass("box1").css({
+                        width:100,
+                        //높이는 랜덤함수를 활용해 랜덤하게 생성
+                        height:Math.floor(Math.random() * 100) + 50
+                        //appendTo 메소드를 활용해 body 태그 안에 입력
+                    }).appendTo('body');
+                }
+                else if( i % 3 == 1) {
+                    $('<div></div>').addClass("box2").css({
+                        width:100,
+                        height:Math.floor(Math.random() * 100) + 50
+                    }).appendTo('body');
+                }
+                else{
+                    $('<div></div>').addClass("box3").css({
+                        width:100,
+                        height:Math.floor(Math.random() * 100) + 50
+                    }).appendTo('body');
+                }
+                //세로 랜덤함수로 0~99 + 50을 floor 하면 51 ~ 150까지 세로가
+                //랜덤하게 지정됨
+                //이것을 <div></div>로 만들고 body에 추가한다.
+                //Math.floor은 매스랜덤이 처음에 0인데 1로 시작하게 해주는 것이다.
+                //하나 안에 여러개 넣어도 된다.
+            }
+            //Masonry 플로그인을 적용합니다.
+            $('body').masonry({
+                columnWidth: 110
+                // body의 masonry함수를 이용해서 열 넓이를 110으로 지정
+            });
+            
+        })
+    </script>
 </head>
 <body>
     
