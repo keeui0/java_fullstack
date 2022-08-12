@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <title>타이머를 가진 웹 워커 만들기</title>
 </head>
 <body>
@@ -24,7 +25,18 @@
         addWorker.onmessage = function(e) { //워크 태스크의 데이터 timer에 출력
             document.getElementById("timer").innerHTML = e.data;
         }
+        console.log(start)
     </script>
     
 </body>
 </html>
+<!--
+var count = 0; 
+var timerID = null;
+...
+function myCallback() { //1초 간격으로 호출
+    count++;            //시작과 동시에 1씩 추가
+    postMessage(count); //메인의 addWorker.onmessage로 데이터 넘김
+}
+... 추가 내용에 if문을 사용하여 만들어보세요!
+ -->
