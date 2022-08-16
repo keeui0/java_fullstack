@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <style>
+        img {
+            width: 500px;
+            height: 350px;
+        }
+        .mySlides {
+            display: none;
+        }
+        /* ↓ a 태그의 leftbtn 클래스를 나타내는 것*/
+        a.leftbtn {
+            position: absolute;
+            top: 45%;
+            left: 0;
+        }
+        a.rightbtn {
+            position: absolute;
+            top: 45%;
+            right: 0;
+        }
+        /* ↓ div태그의 leftbtn 클래스를 나타내는 것*/
+        /* relative : 요소를 일반적인 문서 흐름에 따라 배치하고,
+        자기 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용*/
+        div.large{
+            max-width: 100%;
+            position: relative;
+        }
+        div.small {
+            max-width: 500px;
+            position: relative;
+        }
+    </style>
+    <script>
+        var slideIndex = 1;
+        function plusDivs(n) {
+            //즉 showDivs 인자로 1부터 5까지의 숫자를 누를 때 마다
+            //더해서 전달하는 것
+            showDivs(slideIndex += n);  //누적해서 showDivs를 호출한다.
+        }   //양쪽 버튼 클릭 시 호출하는 알고리즘
+        function showDivs(n) {
+            var i;
+            //class mySlides의 값을 가져오는데 그게 바로 이미지
+            var x = document.getElementsByClassName("mySlides");
+            //만약 +되는 숫자가 사진의 갯수보다 많아진다면
+            //slideIndex 값을 1로 만든다 즉) 다시 첫 번째 사진으로 돌아온다.
+            if(n > x.length) {
+                slideIndex = 1
+            }
+            //처음부터 왼쪽 버튼을 눌러버리면 x.length 즉) 다섯 번째 마지막 사진이 나오는 것
+            if(n<1) {
+                slideIndex = x.length;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+            };
+            for(i=0; i < x.length; i++){
+                x[i].style.display = "none";
+            }
+            //display를 지정함으로써 이미지를 보이게 만들었다.
+            //display = inline이어도 똑같이 적용
+            x[slideIndex-1].style.display = "block";
+        }
+    </script>
+</head>
+<body onload = "showDivs(1)">
+    <div align="center" class="large">
+        <h2 align="center">Manual</h2>
+        <div class="small">
+            <img src="s1.jpg" class="mySlides">
+            <img src="s2.jpg" class="mySlides">
+            <img src="s3.jpg" class="mySlides">
+            <img src="s4.jpg" class="mySlides">
+            <img src="s5.jpg" class="mySlides">
+            <a class="leftbtn" onclick="plusDivs(-1)">◀</a>
+            <a class="rightbtn" onclick="plusDivs(1)">▶</a>
+        </div>
+    </div>
+    
+</body>
+</html>
