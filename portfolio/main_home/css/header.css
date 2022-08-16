@@ -3,11 +3,12 @@
     background-color: rgb(48, 46, 46);
     height: 60px;
     border-bottom: 1px solid #fff;
-    position: relative;
+    position: flex;
 }
 
 .header_cover > header > div > a {
     display : block;
+    width: 200px;
     color: hsla(0, 0%, 100%, .7);
 }
 /* 상단 div 끝*/
@@ -15,21 +16,34 @@
 header > nav {
     width: 100%;
     float: left;
-    margin-left: 250px;
-    margin-top: 35px;
+    display: block;
+    position: relative;
 }
 
 header {
-    padding: 20px;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
 }
 
-nav > div > a {
+header > div {
+    display: block;
     float: left;
-    position: relative;
-    width: 100%;
-    color: hsla(0, 0%, 100%, .7);
+    width: 200px;
 }
+/* logo setting */
 
 nav > div {
     padding: 16px;
+    position: relative;
+    display: block;
+    float: right;
 }
+/* 상단 메뉴 setting */
+
+nav > div > a {    
+    width: 100px;
+    color: hsla(0, 0%, 100%, .7);
+}
+
+
