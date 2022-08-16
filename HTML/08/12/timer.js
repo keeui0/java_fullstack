@@ -1,23 +1,17 @@
 var count = 0; 
 var timerID = null;
-var k =0;
 
-
+console.log(timerID)
 onmessage = function(e) {
-    str = e.data;
-    if(str == "start"){
-        timerID = setInterval(myCallback, 1000);
-        k++;
-        return;
-
+    //만일 전송된 e의 값이 "start" 이면
+    if(e.data == "start"){
+        //setInerval() 함수를 사용하여 myCallback 함수를 1000ms 주기로 실행
+        timer = setInterval(myCallback, 1000);
     }
-    if(str == "stop"){
-        clearInterval(timerID);
-        return;
-    }
-    if(k > 1){
-        timerID = function start(){}
-        stop(start());
+    //만일 전송된 e의 값이 "stop" 이면
+    else if(e.data == "stop"){
+        //clearInterval() 함수를 사용하여 카운팅을 중단한다.
+        clearInterval(timer);
     }
 }
     

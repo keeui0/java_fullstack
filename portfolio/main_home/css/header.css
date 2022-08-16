@@ -1,0 +1,35 @@
+/* 상단 div 시작*/
+.header_cover {
+    background-color: rgb(48, 46, 46);
+    height: 60px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+
+.header_cover > header > div > a {
+    display : block;
+    color: hsla(0, 0%, 100%, .7);
+}
+/* 상단 div 끝*/
+
+header > nav {
+    width: 100%;
+    float: left;
+    margin-left: 250px;
+    margin-top: 35px;
+}
+
+header {
+    padding: 20px;
+}
+
+nav > div > a {
+    float: left;
+    position: relative;
+    width: 100%;
+    color: hsla(0, 0%, 100%, .7);
+}
+
+nav > div {
+    padding: 16px;
+}

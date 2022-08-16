@@ -75,7 +75,7 @@
             margin: 0;
             padding: 0;
         }
-        #IdError {
+        #iderror {
             color: red;
             font-size: 20px;
             margin-top: 5px;
@@ -85,10 +85,15 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script> 
         $(document).ready(function(){
-            $("#Idinput").click(function(){
-                if($("#IdError").css("display") == "none"){
-                    
-                };
+            $("#idinput").click(function(){
+                if($("#iderror").css("display") == "none"){
+                    $("#iderror").show();
+                }
+            })
+            $("#idinput").mouseout(function(){
+                if($("iderror").show()){
+                    $("#iderror").hide()
+                }
             })
         })
 
@@ -102,6 +107,7 @@
         <div>
             <ul class="left">
                 <li>아이디</li>
+                <li id="iderror" >필수 입력 항목입니다.</li>
                 <li>패스워드</li>
                 <li>패스워드 확인</li>
                 <li>이메일</li>
@@ -111,13 +117,13 @@
         <div>
             <ul class="right">
             <li>
-                <input type="text" id="Idinput" name="Id" style="width: 190px;" >
-                <div id="IdError" >필수 입력 항목입니다.</div>
+                <input type="text" id="idinput" name="Id" style="width: 190px;" >
+                <!-- <div id="iderror" >필수 입력 항목입니다.</div> -->
 
             </li>
             <li><input type="password" name="Password" style="width: 190px;"></li>
             <li><input type="password" name="Password" style="width: 190px;"></li>
-            <li><input type="text" name="email" style="width:80px">@
+            <li><input type="text" name="email" style="width:80px">
                 <input type="text" name="email" style="width:80px;"></li>
             <li><input type="text" name="address" style="width: 190px;"></li>
             </ul>

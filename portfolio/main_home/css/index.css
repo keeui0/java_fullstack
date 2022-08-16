@@ -1,0 +1,19 @@
+@charset "utf-8";
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "나눔바른고딕", sans-serif;
+}       /* body 태그 속 폰트 설정 */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul > li {
+    list-style: none;
+}
+

@@ -14,7 +14,7 @@
     <button id="start" onclick="start()">start</button>
     <button id="stop" onclick="stop()">stop</button>
     <script>
-        var addWorker = new Worker("timer.js"); //워커 태스크 생성
+        var addWorker = new Worker("timer1.js"); //워커 태스크 생성
 
         function start() { //start 버튼을 눌렀을 때
             addWorker.postMessage("start"); //e에 start 데이터 전송
