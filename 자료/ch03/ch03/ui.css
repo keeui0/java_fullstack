@@ -1,0 +1,614 @@
+@charset "utf-8";
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,
+button,abbr,acronym,address,code,del,dfn,em,img,strong,sub,sup,dl,dt,dd,
+ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+hr {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Noto Sans Korean', 'Malgun Gothic', '맑은고딕', '돋움', dotum, sans-serif;
+    font-size: 16px;
+    color: #737373;
+    line-height: 1.5;
+    background: url(../images/content_bg4.png) repeat;
+}
+
+h1,h2,h3,h4,h5,
+h6 {
+    font-weight: normal
+}
+
+ol,ul,
+li {
+    list-style: none
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+form,
+fieldset,
+iframe {
+    display: block;
+    border: 0
+}
+
+img,
+button {
+    border: 0 none;
+    vertical-align: top;
+}
+
+hr {
+    height: 0;
+    display: none
+}
+
+i,em,
+address {
+    font-style: normal
+}
+
+label,
+button {
+    cursor: pointer
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+caption,
+legend {
+    overflow: hidden;
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    text-indent: -100%;
+    white-space: nowrap;
+    z-index: -1
+}
+
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,
+figcaption {
+    display: block;
+    box-sizing: border-box;
+}
+
+input,textarea,select,
+button {
+    font-family: 'Noto Sans Korean', 'Malgun Gothic', '맑은고딕', '돋움', dotum, sans-serif;
+    font-size: 16px;
+    color: #919090;
+    line-height: 1.5;
+    letter-spacing: 0;
+    vertical-align: middle;
+    border: none;
+}
+
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none
+}
+
+a {
+    color: #919090;
+    text-decoration: none
+}
+
+a:link,
+a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.blind {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999em;
+    visibility: hidden;
+    outline: none;
+    z-index: -1;
+}
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+/*layout*/
+#wrap {
+    width: 100%;
+    height: 100%;
+    padding-right: 180px;
+}
+/* h1태그는 화면에는 표시되지 않지만 Html 제목으로 정보를 전달한다
+font-size: 0 으로 지정하여 브라우저 화면에 표시되지 않도록 한다 */
+#wrap>h1 {
+    font-size: 0;
+}
+
+header .logo_box {
+    position: absolute;
+    right: 35px;
+    top: 75px;
+    cursor: pointer;
+}
+/* 로고이미지를 크기에 맞게 지정해보기 원본이미지를 줄임 */
+header .logo_box img {
+    width: 100px;
+}
+/* 헤더태그영역의 포지션은 항상 오른쪽에 위치하도록 fixed지정하고
+오른쪽과 위쪽은 0으로 지정한다. repeat-y로 지정하면 세로기준으로 높이가 위에서부터
+아래까지 꽉 차도록 합니다 헤더태그가 제일 상위에 위치하도록 z-index: 11로 지정하고
+범위는 무한대로 지정할 수 있다*/
+#wrap header {
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background: url(../images/menu_bg1.png) repeat-y;
+    z-index: 11;
+}
+
+#wrap header nav {
+    width: 100%;
+    height: 100%;
+}
+/* 태그가 화면전체 영역을 차지하게 하고  display: flex로 지정한다
+수직 중앙 정렬하기위해 justify-content: center로 한다 */
+#wrap header nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 메뉴의 영역은 텍스트와 불릿이 시작하는 곳부터 입니다 여백은 메뉴의 영역과 구분되어야 하기에
+ 마진으로 여백을 지정합니다 */
+#wrap header nav ul li {
+    margin: 0px 0px 10px 30px;
+    padding-left: 15px;
+    position: relative;
+}
+/* 메뉴의 텍스트 스타일을 지정합니다 */
+#wrap header nav ul li a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 30px;
+}
+/* 텍스트 앞의 불릿은 내용과 상관없는 디자인요소입니다 불필요한 태그와 이미지를 사용하지 않고
+CSS의 가상요소 중  after로 지름이  5px인 흰색의 불릿을 만듭니다 불릿의 위치를 왼쪽으로
+변경하비다 */
+#wrap header nav ul li:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 13px;
+}
+/* 불릿은 <li>태그의 가상요소이고 <a>태그의 부모입니다 따라서 <li>태그에 :hover를 사용하여
+<a>태그는 color를 지정하고 <li>태그의 가상요소인 :after는 background를 지정하여
+마우스 반응에 따라 메뉴색상이 바뀌도록 변경합니다. 
+메뉴가 활성화되도록 <li>태그에 li.on이라는 클래스를 지정합니다*/
+#wrap header nav ul li:hover a,
+#wrap header nav ul li.on a {
+    color: #ed3140;
+}
+
+#wrap header nav ul li:hover:after,
+#wrap header nav ul li.on:after {
+    background: #ed3140;
+}
+/* z-index: 12 로 작성하여 헤더태그보다 상위로 지정합니다 가장 상단에 위치하도록 합니다*/
+footer {
+    width: 180px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px 20px 30px 20px;
+    font-size: 11px;
+    color: #7e7e7e;
+    z-index: 12;
+}
+/* address 태그하단에 여백을 15px로 지정합니다 */
+footer address {
+    padding: 0px 0px 15px 0px;
+}
+/* footer>a 자식으로 이미지의 크기도 같고,높이의 위치도 같습니다 가벼운 에니메이션
+속성을 주기위하여  transition: .4s를 지정합니다 */ 
+footer>a {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -31px;
+    transition: .4s;
+}
+/* 각 클래스에 맞는 이미지와 맞는 위치의 값을 지정합니다 */
+footer>a.face {
+    background: url(../images/social_b_facebook.png) no-repeat;
+    right: 18px;
+}
+/* 하버로 이미지가  변경하도록 지정합니다*/
+footer>a.face:hover {
+    background: url(../images/social_b_facebook_hover.png) no-repeat;
+}
+
+footer>a.twit {
+    background: url(../images/social_b_twitter.png) no-repeat;
+    right: 48px;
+}
+
+footer>a.twit:hover {
+    background: url(../images/social_b_twitter_hover.png) no-repeat;
+}
+
+footer>a.instar {
+    background: url(../images/social_b_instar.png) no-repeat;
+    right: 80px;
+}
+
+footer>a.instar:hover {
+    background: url(../images/social_b_instar_hover.png) no-repeat;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#container .content {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s;
+}
+
+#container .content.this {
+    width: 100%;
+    left: 0 !important;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto
+}
+
+/* 왼쪽은 -100%로 지정하고 모든 영역의 width는 100%로 지정합니다 */
+#container .content.prev {
+    width: 100%;
+    left: -100% !important;
+}
+
+#container .content.next {
+    width: 100%;
+    left: 100% !important;
+}
+
+#container .content.this .conbox {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#container .content.this:before,
+#container .content.this:after,
+#container .content.this .conbox:before,
+#container .content.prev:before,
+#container .content.prev:after,
+#container .content.prev .conbox:before,
+#container .content.next:before,
+#container .content.next:after,
+#container .content.next .conbox:before {
+    opacity: 0;
+    transition: all .6s;
+    transition-delay: .3s;
+}
+
+#container .content.this .conbox:before {
+    transform: translate3d(300px, 0, 0);
+}
+/* 텍스트가 있는 after요소에 는 translate를 -300으로 지정하여 오른쪽으로 이동한다 */
+#container .content.this:after {
+    transform: translate3d(-300px, 0, 0);
+}
+
+#container #menu1 {
+    left: 0%;
+    background: url(../images/content_bg1.png) repeat;
+}
+
+#container #menu2 {
+    left: 25%;
+    background: url(../images/content_bg2.png) repeat;
+}
+
+#container #menu3 {
+    left: 50%;
+    background: url(../images/content_bg3.png) repeat;
+}
+
+#container #menu4 {
+    left: 75%;
+    background: url(../images/content_bg4.png) repeat;
+}
+
+/*가상요소 활용하기 container를 기준으로 before 와 after의 영역을 만듭니다
+가상요소의 포지션속성값을 absolute지정합니다*/
+#container .content:before,
+#container .content:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+/* 각 영역을 구분하는 라인을 before로 만들고, 라인이 가장 상단으로 오도록 z-index: 4로 지정*/
+#container .content:before {
+    width: 1px;
+    height: 100%;
+    background: #000;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+
+#container .content:after {
+    left: 30px;
+    top: 180px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ed3140;
+}
+/* 가상요소로 만든 after의 각영역에 제목이 되는 텍스트를 지정하겟습니다 4개의 영역이 모두 다른
+텍스트가 들어갑니다 */
+#container #menu1:after {
+    content: "회사소개";
+}
+
+#container #menu2:after {
+    content: "도서소개";
+}
+
+#container #menu3:after {
+    content: "FAQ";
+}
+
+#container #menu4:after {
+    content: "Contact Us";
+}
+
+#container .content .conbox:before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+#container #menu1 .conbox:before {
+    background: url(../images/main_ico1.png) no-repeat;
+    width: 350px;
+    height: 260px;
+    right: -10px;
+    top: 130px;
+    background-size: 100%;
+}
+
+#container #menu2 .conbox:before {
+    background: url(../images/main_ico2.png) no-repeat;
+    width: 180px;
+    height: 470px;
+    right: -30px;
+    top: 180px;
+    background-size: 100%;
+}
+
+#container #menu3 .conbox:before {
+    background: url(../images/main_ico3.png) no-repeat;
+    width: 270px;
+    height: 310px;
+    right: -60px;
+    top: 30px;
+    background-size: 100%;
+}
+
+#container #menu4 .conbox:before {
+    background: url(../images/main_ico4.png) no-repeat;
+    width: 350px;
+    height: 400px;
+    right: -170px;
+    top: 100px;
+    background-size: 100%;
+}
+/* 메인 페이지의 각 콘텐츠 상단에 <h2>태그로 작성된 제목은 웹사이트 첫 진입시에는 나오지않도록
+  opacity: 0 으로 지정합니다*/
+#container .content h2 {
+    opacity: 0;
+}
+
+#container .content.this h2 {
+    height: auto;
+    padding: 30px 0 20px 50px;
+    color: #000;
+    position: relative;
+    background: #fff;
+    font-size: 28px;
+    font-weight: 400;
+    opacity: 1;
+    transition: all .6s;
+    transition-delay: 1.2s;
+}
+
+#container .content.this h2:after {
+    content: "";
+    width: 100%;
+    height: 8px;
+    background: #ed3140;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#container .content .conbox .content_wrap {
+    opacity: 0;
+}
+
+#container .content.this .conbox .content_wrap {
+    padding: 30px 50px 50px 50px;
+    opacity: 1;
+    transition: all 1.7s;
+    transition-delay: .8s;
+}
+/*
+#container .content {
+    top: -100%;
+    transition: all .8s;
+}
+*/
+#container .content:nth-of-type(2) {
+    transition-delay: .3s;
+}
+
+#container .content:nth-of-type(3) {
+    transition-delay: .6s;
+}
+
+#container .content:nth-of-type(4) {
+    transition-delay: .8s;
+}
+
+#container.start .content {
+    top: 0;
+}
+
+.pargrph_tit {
+    margin-bottom: 50px;
+    font-size: 24px;
+    color: #fff;
+    position: relative;
+}
+
+.pargrph_tit:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 8px;
+    background: #ed3140;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.text_box {
+    position: relative;
+}
+
+
+.text_box h4 {
+    font-size: 40px;
+    color: #d6d4d4;
+    font-weight: 700;
+}
+/* 실제 텍스트가 있는 영역 */
+.text_box p {
+    margin-bottom: 50px;
+    color: #ababab;
+    line-height: 20px;
+}
+/* 첫번째 문단부터 문단이 홀수번째 이면 왼쪽으로 정렬시키고 */
+.text_box:nth-child(odd) {
+    text-align: left;
+}
+/* 짝수 번째 이면 오른쪽으로 정렬시켜라 */
+.text_box:nth-child(even) {
+    text-align: right;
+}
+/* after에 생성한 이미지영역도 텍스트영역과 겹치지 않게된다 */
+.text_box:nth-child(1):after {
+    content: "";
+    display: block;
+    width: 206px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../images/content_img1.png) no-repeat right top;
+    background-size: 206px auto;
+}
+/* .text_box에 여백이 생겨 텍스트는 지정된 여백(오른쪽) 이외에 위치하게 된다 */
+.text_box:nth-child(1) p {
+    width: 100%;
+    padding-right: 206px;
+}
+/* 뒤에서 부터 순서를 정하는 가상클래스 선택자이다 이미지를 넣기위해 before를 만든다
+이미지를 왼쪽으로 배치한다 백그라운드 속성으로 넣는다 */
+.text_box:nth-last-child(1):before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    background: url(../images/content_img2.png) no-repeat right top;
+    background-size: 150px;
+}
+/* 뒤에서 부터 순서를 정하는 가상클래스 선택자이다 이미지를 넣은후에 
+또다른 이미지를 오른쪽에 배치한다*/
+.text_box:nth-last-child(1):after {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 280px;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    background: url(../images/content_img3.png) no-repeat right top;
+    background-size: 170px;
+}
+/* 양쪽의 이미지가 겹치지 않도록 패딩 좌우에 속성값을 이미지 크기만큼 준다 */
+.text_box:nth-last-child(1) p {
+    padding: 0 200px 0 280px;
+}
+/* 문단의 제목을 강조색상으로 표시한다 */
+.text_box:nth-last-child(1) h4 {
+    color: #ed3140;
+}

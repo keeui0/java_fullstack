@@ -1,0 +1,829 @@
+@charset "utf-8";
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,
+button,abbr,acronym,address,code,del,dfn,em,img,strong,sub,sup,dl,dt,dd,
+ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+hr {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Noto Sans Korean', 'Malgun Gothic', '맑은고딕', '돋움', dotum, sans-serif;
+    font-size: 16px;
+    color: #737373;
+    line-height: 1.5;
+    background: url(../images/content_bg4.png) repeat;
+}
+
+h1,h2,h3,h4,h5,
+h6 {
+    font-weight: normal
+}
+
+ol,ul,
+li {
+    list-style: none
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+form,fieldset,
+iframe {
+    display: block;
+    border: 0
+}
+
+img,
+button {
+    border: 0 none;
+    vertical-align: top;
+}
+
+hr {
+    height: 0;
+    display: none
+}
+
+i,em,
+address {
+    font-style: normal
+}
+
+label,
+button {
+    cursor: pointer
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+caption,
+legend {
+    overflow: hidden;
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    text-indent: -100%;
+    white-space: nowrap;
+    z-index: -1
+}
+
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,
+figcaption {
+    display: block;
+    box-sizing: border-box;
+}
+
+input,textarea,select,
+button {
+    font-family: 'Noto Sans Korean', 'Malgun Gothic', '맑은고딕', '돋움', dotum, sans-serif;
+    font-size: 16px;
+    color: #919090;
+    line-height: 1.5;
+    letter-spacing: 0;
+    vertical-align: middle;
+    border: none;
+}
+
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none
+}
+
+a {
+    color: #919090;
+    text-decoration: none
+}
+
+a:link,
+a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.blind {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999em;
+    visibility: hidden;
+    outline: none;
+    z-index: -1;
+}
+
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+/*layout*/
+#wrap {
+    width: 100%;
+    height: 100%;
+    padding-right: 180px;
+}
+/* h1태그는 화면에는 표시되지 않지만 Html 제목으로 정보를 전달한다
+font-size: 0 으로 지정하여 브라우저 화면에 표시되지 않도록 한다 */
+
+#wrap>h1 {
+    font-size: 0;
+}
+/* 로고박스에서 마우스커서가 나타나도록 속성값을 pointer로 지정한다*/
+header .logo_box {
+    position: absolute;
+    right: 35px;
+    top: 75px;
+    cursor: pointer;
+}
+/* 로고이미지를 크기에 맞게 지정해보기 원본이미지를 줄임 */
+header .logo_box img {
+    width: 100px;
+}
+
+#wrap header {
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background: url(../images/menu_bg1.png) repeat-y;
+    z-index: 11;
+}
+/* 헤더태그영역의 포지션은 항상 오른쪽에 위치하도록 fixed지정하고
+오른쪽과 위쪽은 0으로 지정한다. repeat-y로 지정하면 세로기준으로 높이가 위에서부터
+아래까지 꽉 차도록 합니다 헤더태그가 제일 상위에 위치하도록 z-index: 11로 지정하고
+범위는 무한대로 지정할 수 있다*/
+#wrap header nav {
+    width: 100%;
+    height: 100%;
+}
+
+#wrap header nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 태그가 화면전체 영역을 차지하게 하고  display: flex로 지정한다
+수직 중앙 정렬하기위해 justify-content: center로 한다 */
+#wrap header nav ul li {
+    margin: 0px 0px 10px 30px;
+    padding-left: 15px;
+    position: relative;
+}
+/* 메뉴의 텍스트 스타일을 지정합니다 */
+#wrap header nav ul li a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 30px;
+}
+/* 텍스트 앞의 불릿은 내용과 상관없는 디자인요소입니다 
+불필요한 태그와 이미지를 사용하지 않고 CSS의 가상요소 중  after로 지름이  
+5px인 흰색의 불릿을 만듭니다 불릿의 위치를 왼쪽으로 변경합니다 */
+#wrap header nav ul li:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 13px;
+}
+/* 불릿은 <li>태그의 가상요소이고 <a>태그의 부모입니다 
+따라서 <li>태그에 :hover를 사용하여
+<a>태그는 color를 지정하고 <li>태그의 가상요소인 :after는 background를 지정하여
+마우스 반응에 따라 메뉴색상이 바뀌도록 변경합니다. 
+메뉴가 활성화되도록 <li>태그에 li.on이라는 클래스를 지정합니다*/
+#wrap header nav ul li:hover a,
+#wrap header nav ul li.on a {
+    color: #ed3140;
+}
+
+#wrap header nav ul li:hover:after,
+#wrap header nav ul li.on:after {
+    background: #ed3140;
+}
+/* z-index: 12 로 작성하여 헤더태그보다 상위로 지정합니다 
+가장 상단에 위치하도록 합니다*/
+footer {
+    width: 180px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px 20px 30px 20px;
+    font-size: 11px;
+    color: #7e7e7e;
+    z-index: 12;
+}
+/* address 태그하단에 여백을 15px로 지정합니다 */
+footer address {
+    padding: 0px 0px 15px 0px;
+}
+/* footer>a 자식으로 이미지의 크기도 같고,높이의 위치도 같습니다 
+가벼운 에니메이션 속성을 주기위하여  transition: .4s를 지정합니다 */ 
+footer>a {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -31px;
+    transition: .4s;
+}
+/* 각 클래스에 맞는 이미지와 맞는 위치의 값을 지정합니다 */
+footer>a.face {
+    background: url(../images/social_b_facebook.png) no-repeat;
+    right: 18px;
+}
+/* 하버로 이미지가  변경하도록 지정합니다*/
+footer>a.face:hover {
+    background: url(../images/social_b_facebook_hover.png) no-repeat;
+}
+
+footer>a.twit {
+    background: url(../images/social_b_twitter.png) no-repeat;
+    right: 48px;
+}
+
+footer>a.twit:hover {
+    background: url(../images/social_b_twitter_hover.png) no-repeat;
+}
+
+footer>a.instar {
+    background: url(../images/social_b_instar.png) no-repeat;
+    right: 80px;
+}
+
+footer>a.instar:hover {
+    background: url(../images/social_b_instar_hover.png) no-repeat;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 화면이 이동되는 형태가 보이기 위해 transition: all .5s설정함 */
+#container .content {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s;
+}
+/* 현재화면을 보면 브라우저를 움직이면 그에 따라 화면이 움직여 변경되는것을 방지코자
+화면 고정키 위하여 */
+#container .content.this .conbox {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 슬라이드는 기본적으로 오른쪽에서 왼쪽으로 이동합니다 이전 / 현재 / 다음의 위치
+ 지금 하고 있는 실습기준으로 this클래스로 지정합니다 오른쪽 준비영역의 section이 next
+ 현재를 지나친 왼쪽영역이 prev로 지정하고 각 클래스의 스타일을 지정합니다 */
+
+/*페이지 이동효과*/
+/* 가로축으로는 스크롤이 생성되지 않도록하고 세로축으로는 스크롤이 생성되도록 한다 */
+#container .content.this {
+    width: 100%;
+    left: 0 !important;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto
+}
+/* css우선순위 1위 !important  2위  html에서 style속성을 직접지정
+3위 #id로 지정한 속성 4위 클래스로 지정한 속성 5위 태그이름으로 지정
+6위 상위객체에 의해 상속된 속성*/
+
+/* 왼쪽은 -100%로 지정하고 모든 영역의 width는 100%로 지정합니다 */
+#container .content.prev {
+    width: 100%;
+    left: -100% !important;
+}
+
+#container .content.next {
+    width: 100%;
+    left: 100% !important;
+}
+/* 콘텐츠영역이 브라우저에 페이지 형태로 다 보일경우 (섹션태그에 .this클래스가
+지정되는 경우) 이전에 꾸밈요소로 가상속성을 사용하여 만들엇던 텍스트와 이미지를
+숨김 처리 합니다
+transition 속성값을 all,6s로 지정하고 transition-delay: .3s로 지정합니다 
+일정한 시간동안 영역이 전환되도록 만들수 있다 
+.this를 함께 지정햇을때만 캐릭터 이미지와 텍스트가 사라지는데 .prev 와 .next 에도
+함께 지정하여 애니메이션을 동일하게 맞추어 줍니다
+선택자,선택자(속성명:속성값;)
+*/
+#container .content.this:before,
+#container .content.this:after,
+#container .content.this .conbox:before,
+#container .content.prev:before,
+#container .content.prev:after,
+#container .content.prev .conbox:before,
+#container .content.next:before,
+#container .content.next:after,
+#container .content.next .conbox:before {
+    opacity: 0;
+    transition: all .6s;
+    transition-delay: .3s;
+}
+/* 캐릭터 이미지가 있는 before가상요소에 transform의 속성값을 300으로 지정하여
+위치가 왼쪽으로 이동할 수 있도록 합니다 
+translate3d(x축이동, y축이동, z축이동) 
+- 이동은 기준점에서 왼쪽 아래가 된다
++ 이동은 기준점에서 오른쪽 위쪽이 된다     */
+#container .content.this .conbox:before {
+    transform: translate3d(300px, 0, 0);
+}
+/* 텍스트가 있는 after요소에 는 translate를 -300으로 지정하여 오른쪽으로 이동한다 */
+#container .content.this:after {
+    transform: translate3d(-300px, 0, 0);
+}
+
+#container #menu1 {
+    left: 0%;
+    background: url(../images/content_bg1.png) repeat;
+}
+
+#container #menu2 {
+    left: 25%;
+    background: url(../images/content_bg2.png) repeat;
+}
+
+#container #menu3 {
+    left: 50%;
+    background: url(../images/content_bg3.png) repeat;
+}
+
+#container #menu4 {
+    left: 75%;
+    background: url(../images/content_bg4.png) repeat;
+}
+
+/*가상요소 활용하기 container를 기준으로 before 와 after의 영역을 만듭니다
+가상요소의 포지션속성값을 absolute지정합니다*/
+#container .content:before,
+#container .content:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+/* 각 영역을 구분하는 라인을 before로 만들고, 라인이 가장 상단으로 오도록 z-index: 4로 지정*/
+#container .content:before {
+    width: 1px;
+    height: 100%;
+    background: #000;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+/* 가상요소로 만든 after의 각영역에 제목이 되는 텍스트를 지정하겟습니다 
+4개의 영역이 모두 다른 텍스트가 들어갑니다 */
+#container .content:after {
+    left: 30px;
+    top: 180px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ed3140;
+}
+
+#container #menu1:after {
+    content: "회사소개";
+}
+
+#container #menu2:after {
+    content: "도서소개";
+}
+
+#container #menu3:after {
+    content: "FAQ";
+}
+
+#container #menu4:after {
+    content: "Contact Us";
+}
+
+#container .content .conbox:before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+#container #menu1 .conbox:before {
+    background: url(../images/main_ico1.png) no-repeat;
+    width: 350px;
+    height: 260px;
+    right: -10px;
+    top: 130px;
+    background-size: 100%;
+}
+
+#container #menu2 .conbox:before {
+    background: url(../images/main_ico2.png) no-repeat;
+    width: 180px;
+    height: 470px;
+    right: -30px;
+    top: 180px;
+    background-size: 100%;
+}
+
+#container #menu3 .conbox:before {
+    background: url(../images/main_ico3.png) no-repeat;
+    width: 270px;
+    height: 310px;
+    right: -60px;
+    top: 30px;
+    background-size: 100%;
+}
+
+#container #menu4 .conbox:before {
+    background: url(../images/main_ico4.png) no-repeat;
+    width: 350px;
+    height: 400px;
+    right: -170px;
+    top: 100px;
+    background-size: 100%;
+}
+
+/*영역 전후 구분하기 화면에는 나타나지 않도록  opacity: 0 */
+#container .content h2 {
+    opacity: 0;
+}
+/* .this추가하여 opacity 속성값을 1로 지정함 이렇게 하면 페이지가 구성되기 전
+즉 <section id="menu~" class="content">가  this를 가지고 있지 않으면 opacity가
+0으로 지정되어 있어 <h2>태그가 화면상에 나타나지 않는다 그러다가 .content.this가
+생성되면 opacity: 1로 지정되어 <h2>태그가 화면에 나타나게 된다
+*/
+#container .content.this h2 {
+    height: auto;
+    padding: 30px 0 20px 50px;
+    color: #000;
+    position: relative;
+    background: #fff;
+    font-size: 28px;
+    font-weight: 400;
+    opacity: 1;
+    transition: all .6s;
+    transition-delay: 1.2s;
+}
+/* h2태그의 라인은 가상 속성을 이용해 적용햇습니다 */
+#container .content.this h2:after {
+    content: "";
+    width: 100%;
+    height: 8px;
+    background: #ed3140;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+/* 메인 페이지의 각 콘텐츠 상단에 <h2>태그로 작성된 제목은 
+웹사이트 첫 진입시에는 나오지않도록  opacity: 0 으로 지정합니다*/
+#container .content .conbox .content_wrap {
+    opacity: 0;
+}
+/* .content_wrap 클래스도 아직 내용이 들어가 있지 않아서 보이지 않는거지 실제로
+내용이 들어가면  opacity: 1로 바뀌게 되어 보이게 된다   
+container .content.this .conbox .content_wrap선택자에 transition의 시간을 1.7s로 지정하고
+transition-delay: .8s로 지정한다 
+지정이유는 .conbox.content_wrap의 지연시간은 앞에서 지정한 #container .content 의
+transition-delay시간을 고려하기 위해서이다 즉 마지막으로 사라지는 transition-delay 시간에
+맞춰 지정해야 한다는 소리다.이렇게 시간차를 두어 순서대로 화면이 의도한대로 움직이게 된다
+*/
+#container .content.this .conbox .content_wrap {
+    padding: 30px 50px 50px 50px;
+    opacity: 1;
+    transition: all 1.7s;
+    transition-delay: .8s;
+}
+
+/*애니메이션 효과 만들기 시작위치를 -100%로 하여 위에서 아래로 내려오도록 합니다*/
+#container .content {
+    right: -100%; 
+    transition: all .8s;
+}
+
+/* transition-delay 속성을 이용하여 시작시간을 지연해본다 */
+#container .content:nth-of-type(2) {
+    transition-delay: .3s;
+}
+
+#container .content:nth-of-type(3) {
+    transition-delay: .6s;
+}
+
+#container .content:nth-of-type(4) {
+    transition-delay: .8s;
+}
+/* #container에 .start클래스를 지정하고 지정된 클래스에 상속하여 페이지에 로딩시
+top의 값을 0으로 지정 이것은 <section>태그의 모든영역이 처음에는 콘텐츠영역에
+나타나지 않게 전체 영역의 상단에 있다가 페이지가 로딩되면 콘텐츠영역의 첫 시작점에
+오도록 위치를 지정해 주는 것이다 */
+#container.start .content {
+    top: 0;
+}
+/* 페이지가 로딩되면 start클래스를 추가 할 수 있도록 ui.js를 열어 상단에 있는 
+스크립트를 작성하면 된다  $("#container").addClass("start");   
+css가 적용되려면 <head>태그안에 있는 스크립트를 </body>태그 위로 옮겨야 한다
+이유는 자바스크립트 시점때문이다 클래스가 먼저 지정되어 적용된 스타일을 확인할수
+없기 때문이다  */
+/*회사소개 페이지*/
+.pargrph_tit {
+    margin-bottom: 50px;
+    font-size: 24px;
+    color: #fff;
+    position: relative;
+}
+/* 제목과 본문을 나누기 위한 용도이니 Css가상요소인 after를 생성하여
+속성과 값을 지정하여 만든다 */
+.pargrph_tit:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 8px;
+    background: #ed3140;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.text_box {
+    position: relative;
+}
+
+.text_box h4 {
+    font-size: 40px;
+    color: #d6d4d4;
+    font-weight: 700;
+}
+/* 실제 텍스트가 있는 영역 */
+.text_box p {
+    margin-bottom: 50px;
+    color: #ababab;
+    line-height: 20px;
+}
+/* 첫번째 문단부터 문단이 홀수번째 이면 왼쪽으로 정렬시키고 */
+.text_box:nth-child(odd) {
+    text-align: left;
+}
+/* 짝수 번째 이면 오른쪽으로 정렬시켜라 */
+.text_box:nth-child(even) {
+    text-align: right;
+}
+/* after에 생성한 이미지영역도 텍스트영역과 겹치지 않게된다 */
+.text_box:nth-child(1):after {
+    content: "";
+    display: block;
+    width: 206px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../images/content_img1.png) no-repeat right top;
+    background-size: 206px auto;
+}
+/* .text_box에 여백이 생겨 텍스트는 지정된 여백(오른쪽) 이외에 위치하게 된다 */
+.text_box:nth-child(1) p {
+    width: 100%;
+    padding-right: 206px;
+}
+/* 뒤에서 부터 순서를 정하는 가상클래스 선택자이다 이미지를 넣기위해 before를 만든다
+이미지를 왼쪽으로 배치한다 백그라운드 속성으로 넣는다 */
+.text_box:nth-last-child(1):before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    background: url(../images/content_img2.png) no-repeat right top;
+    background-size: 150px;
+}
+/* 뒤에서 부터 순서를 정하는 가상클래스 선택자이다 이미지를 넣은후에 
+또다른 이미지를 오른쪽에 배치한다*/
+.text_box:nth-last-child(1):after {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 280px;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    background: url(../images/content_img3.png) no-repeat right top;
+    background-size: 170px;
+}
+/* 양쪽의 이미지가 겹치지 않도록 패딩 좌우에 속성값을 이미지 크기만큼 준다 */
+.text_box:nth-last-child(1) p {
+    padding: 0 200px 0 280px;
+}
+/* 문단의 제목을 강조색상으로 표시한다 */
+.text_box:nth-last-child(1) h4 {
+    color: #ed3140;
+}
+
+/*도서소개 페이지 만들기*/
+/* 화면에 보이지 않도록 0px*/
+#menu2.content h3 {
+    font-size: 0px;
+}
+/* 책상 이미지를 background속성으로 도서소개 페이지에 지정키위하여*/
+/* 배경이미지가 100%로 화면전체크기로 */
+#menu2.content.this .conbox {
+    background: url(../images/bookbg.png) no-repeat -15px 360px;
+    max-width: 100%;
+}
+/* 노트북 이미지를  background로 지정한 후 콘텐츠영역에 맞게 크기를 맞추기 위하여*/
+.notebook {
+    width: 954px;
+    height: 650px;
+    margin: 100px auto 0 auto;
+    background: url(../images/mackbook.png) no-repeat;
+    background-size: 954px;
+    position: relative;
+}
+/* 실제콘텐츠가 들어갈 영역의 크기와 위치 */
+.detail_content {
+    width: 719px;
+    height: 453px;
+    position: absolute;
+    left: 117px;
+    top: 38px;
+    padding: 30px 0;
+}
+
+.img_book {
+    width: 270px;
+    float: left;
+}
+
+.img_book img {
+    width: 270px;
+}
+
+.book_description {
+    width: 449px;
+    float: left;
+    padding: 20px 20px 20px 40px;
+}
+
+.detail_content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.book_description h4 {
+    font-size: 31px;
+    font-weight: 700;
+    color: #f92d68;
+    line-height: 31px;
+}
+
+.book_description ul li em {
+    font-weight: 700
+}
+
+.point_text {
+    padding: 10px 30px 0px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.point_text strong {
+    display: block;
+    padding: 0 0 10px 46px;
+    background: url(../images/point_bg.png) no-repeat;
+    background-size: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #3c4147;
+}
+
+.book_rollwrap {
+    width: 954px;
+    height: 150px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.book_rollwrap>button {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    top: 0;
+}
+
+.book_rollwrap>button.roll_left {
+    background: url(../images/btn_left.png) no-repeat center center;
+    background-size: 20px;
+    left: 0;
+}
+
+.book_rollwrap>button.roll_right {
+    background: url(../images/btn_right.png) no-repeat center center;
+    background-size: 20px;
+    right: 0;
+}
+
+.book_rollwrap .book_roll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.book_rollwrap .book_roll ul {
+    width: 1000%;
+}
+
+.book_rollwrap .book_roll ul li {
+    float: left;
+    width: 152px;
+    text-align: center;
+}
+
+.book_rollwrap .book_roll ul li img {
+    width: 100px;
+}
+
+/*공통으로 사용되는 스타일 */
+/*블릿*/
+.bullet_list {
+    margin-top: 20px;
+}
+
+.bullet_list li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #3c4147;
+    position: relative;
+}
+
+.bullet_list li:after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #3c4147;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/*버튼*/
+.commbtn {
+    width: 150px;
+    display: inline-block;
+    height: 35px;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 35px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.commbtn.pink {
+    background: #f92d68;
+    color: #fff;
+}
